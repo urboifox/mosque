@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-nature-900 text-nature-400;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.container {
+  @apply mx-auto px-3 md:px-10;
+}
+
+.swiper-button-prev:after {
+  color: white;
+}
+.swiper-button-next:after {
+  color: white;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
