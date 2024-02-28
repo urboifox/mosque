@@ -26,7 +26,7 @@ export default function PrimaryCard({ data }: { data: any }) {
             : data.description_En}
         </p>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center gap-5">
         <MainButton className="flex items-center gap-2">
           {t("seeMore")}
           <FaShareSquare size={15} color="white" />

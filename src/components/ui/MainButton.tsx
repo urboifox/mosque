@@ -1,11 +1,11 @@
 "use client";
 import { cn } from "@/utils";
-import { MotionProps, motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 
 type MainButtonProps = {
   children: React.ReactNode;
   className?: string;
-} & MotionProps;
+} & HTMLMotionProps<"button">;
 
 export default function MainButton({
   className,

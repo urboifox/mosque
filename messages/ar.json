@@ -1,6 +1,7 @@
 {
   "lang": "english",
   "seeMore": "مشاهدة المزيد",
+  "listenNow": "استمع الان",
   "home": {
     "welcome": "مرحبا",
     "to": "في",
@@ -10,6 +11,20 @@
     "home": "الرئيسية",
     "about": "من نحن",
     "contact": "تواصل معنا",
-    "articles": "المقالات"
+    "articles": "المقالات",
+    "agaza": "اجازة",
+    "audios": "الصوتيات",
+    "donate": "تبرع",
+    "events": "الاحداث",
+    "fatwa": "بنك الفتوة",
+    "live": "بث مباشر",
+    "media": "ملفات",
+    "news": "الاخبار",
+    "private": "الملفات الخاصة",
+    "visuals": "بصريات",
+    "books": "كتب"
+  },
+  "footer": {
+    "description": "Conveying Islam based on evidences from the Quran and Sunnah, upon the understanding of our pious predecessors"
   }
 }

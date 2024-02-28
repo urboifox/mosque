@@ -6,6 +6,10 @@ body {
   @apply bg-nature-900 text-nature-400;
 }
 
+input:focus {
+  outline: none;
+}
+
 .font-inter {
   font-family: var(--font-inter);
 }
