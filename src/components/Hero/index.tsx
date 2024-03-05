@@ -26,7 +26,7 @@ export default function Hero() {
 function Content() {
   const t = useTranslations();
   return (
-    <div className="flex-col lg:flex-row flex gap-10 justify-between items-center">
+    <div className="flex-col dir-dynamic lg:flex-row flex gap-10 justify-between items-center">
       <div className="text-center items-center flex flex-col gap-10">
         <Image
           src={"/images/minaret.svg"}

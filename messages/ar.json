@@ -2,10 +2,13 @@
   "lang": "english",
   "seeMore": "مشاهدة المزيد",
   "listenNow": "استمع الان",
+  "donateNow": "تبرع الان",
   "home": {
     "welcome": "مرحبا",
     "to": "في",
-    "cityMosquePreston": "مسجد مدينة بريستون"
+    "cityMosquePreston": "مسجد مدينة بريستون",
+    "title": "“عد الى الله قبل ان تعود الى الله”",
+    "description": "القلب الذي ينبض لله دائما غريب وسط القلوب التي تبض للدنيا"
   },
   "titles": {
     "home": "الرئيسية",

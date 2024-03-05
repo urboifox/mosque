@@ -14,6 +14,18 @@ input:focus {
   font-family: var(--font-inter);
 }
 
+.dir-dynamic {
+  direction: ltr;
+}
+
+html[lang="ar"] .dir-dynamic {
+  direction: rtl;
+}
+
+html[lang="ar"] * {
+  font-family: var(--font-cairo) !important;
+}
+
 .container {
   @apply mx-auto px-3 md:px-10;
 }
