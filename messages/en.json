@@ -2,10 +2,13 @@
   "lang": "عربي",
   "seeMore": "see more",
   "listenNow": "Listen now",
+  "donateNow": "Donate now",
   "home": {
     "welcome": "Welcome",
     "to": "to",
-    "cityMosquePreston": "City Mosque Preston"
+    "cityMosquePreston": "City Mosque Preston",
+    "title": "“Turn To Allah Before You Return To Allah.”",
+    "description": "The Heart That Beats For Allah Is Always A Stranger Among The Hearts That Beat For The Dunya (World)."
   },
   "titles": {
     "home": "Home",

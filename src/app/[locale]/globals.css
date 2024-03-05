@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-nature-900 text-nature-400;
+  @apply bg-background text-foreground;
 }
 
 input:focus {
@@ -16,6 +16,10 @@ input:focus {
 
 .container {
   @apply mx-auto px-3 md:px-10;
+}
+
+section {
+  @apply py-20;
 }
 
 .swiper-button-prev:after {

@@ -2,12 +2,11 @@ import { Link } from "@/navigation";
 import Image from "next/image";
 import { navLinks } from "./navLinks";
 import NavCTA from "./components/NavCTA";
-import SubNav from "./components/SubNav";
 import NavMenu from "./components/NavMenu";
 
 export default function Navbar() {
   return (
-    <header className="relative container flex items-center justify-between h-[70px]">
+    <header className="relative container flex items-center justify-between h-[80px]">
       <Link href="/">
         <Image
           src={"/images/logo.png"}
@@ -20,14 +19,11 @@ export default function Navbar() {
         {navLinks.map((link, i) => {
           return (
             <Link
-              className="relative capitalize font-medium transition-colors hover:text-nature-300 duration-300"
+              className="relative capitalize font-semibold text-sm hover:text-primary transition-colors font-cinzel hover:text-[#232f4b] duration-300"
               href={link.href}
               key={i}
             >
               {link.title}
-              {link.withDot && (
-                <span className="absolute w-2 h-2 bg-red-200 rounded-full -top-px -right-2"></span>
-              )}
             </Link>
           );
         })}
@@ -38,7 +34,6 @@ export default function Navbar() {
         </div>
         <NavMenu />
       </div>
-      <SubNav />
     </header>
   );
 }

@@ -12,11 +12,14 @@ export default function NavCTA() {
 
   return (
     <>
-      <Link href={`/${otherLang}${pathname.slice(3)}`} className="capitalize">
+      <Link
+        href={`/${otherLang}${pathname.slice(3)}`}
+        className="capitalize hover:text-primary transition-colors duration-200 font-cairo"
+      >
         {t("lang")}
       </Link>
       <Link href={`${currentLang}/donate`}>
-        <MainButton className="capitalize">Donate</MainButton>
+        <MainButton className="capitalize px-6 py-[.4rem]">Donate</MainButton>
       </Link>
     </>
   );

@@ -1,11 +1,11 @@
 "use client";
 import { cn } from "@/utils";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { HTMLAttributes } from "react";
 
 type MainButtonProps = {
   children: React.ReactNode;
   className?: string;
-} & HTMLMotionProps<"button">;
+} & HTMLAttributes<HTMLButtonElement>;
 
 export default function MainButton({
   className,
@@ -13,20 +13,14 @@ export default function MainButton({
   ...props
 }: MainButtonProps) {
   return (
-    <motion.button
-      whileHover={{ scale: 1.04 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{
-        type: "tween",
-        duration: 0.2,
-      }}
+    <button
       {...props}
       className={cn(
-        "px-6 py-[.4rem] text-white capitalize shadow-sm rounded-lg bg-gradient-to-tr from-blue-200 to-blue-300",
+        " text-white capitalize shadow-sm font-bold tracking-wide leading-9 p-[12px_45px] rounded-[20px] border-primary bg-primary transition-colors duration-300 hover:bg-transparent border hover:text-primary",
         className
       )}
     >
       {children}
-    </motion.button>
+    </button>
   );
 }

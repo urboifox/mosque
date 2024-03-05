@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cinzel_Decorative, Cairo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { NextIntlClientProvider } from "next-intl";
@@ -9,6 +9,17 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inter",
+});
+const cairo = Cairo({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-cairo",
+});
+
+const cinzel = Cinzel_Decorative({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-cinzel",
 });
 
 export const metadata: Metadata = {
@@ -27,11 +38,13 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable}  font-inter`}>
+      <body
+        className={`${inter.variable} ${cinzel.variable} ${cairo.variable} font-inter`}
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </NextIntlClientProvider>
       </body>
     </html>
