@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         primary: "#DB9E30",
         secondary: "#ce9124",
+        hover: "#f0b65f",
         foreground: "#000000",
         light: {
           100: "#f6f6f6",

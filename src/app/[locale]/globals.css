@@ -23,7 +23,7 @@ html[lang="ar"] .dir-dynamic {
 }
 
 html[lang="ar"] * {
-  font-family: var(--font-cairo) !important;
+  font-family: var(--font-cairo);
 }
 
 .container {

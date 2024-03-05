@@ -10,13 +10,13 @@ export default function Footer() {
   const allLinks = navLinks.concat(subNavLinks);
   const chunksLinks = [];
 
-  for (let i = 0; i < allLinks.length; i += 4) {
-    chunksLinks.push(allLinks.slice(i, i + 4));
+  for (let i = 0; i < allLinks.length; i += 5) {
+    chunksLinks.push(allLinks.slice(i, i + 5));
   }
 
   return (
-    <>
-      <div className="py-12 flex flex-col gap-10 lg:flex-row rounded-t-[50px] items-center bg-blue-600">
+    <div className="bg-foreground text-background">
+      <div className="py-12 flex flex-col gap-10 lg:flex-row items-center">
         <div className="container flex-1 flex flex-col gap-5">
           <div className="flex items-center gap-6">
             <Image
@@ -29,19 +29,22 @@ export default function Footer() {
               {t("home.cityMosquePreston")}
             </h3>
           </div>
-          <p className="text-nature-600 max-w-xl">{t("footer.description")}</p>
+          <p className="text-[#d6dae1] leading-6 max-w-xl">
+            {t("footer.description")}
+          </p>
           <SocialLinks />
         </div>
         <div className="flex flex-1 gap-10 flex-wrap">
           {chunksLinks.map((e, i) => {
             return (
               <ul key={i} className="flex flex-col gap-4">
+                <h3 className="!font-cinzel text-light-100">Quick Links</h3>
                 {e.map((link, j) => {
                   return (
                     <li key={j} className="w-max">
                       <Link
                         href={link.href}
-                        className="text-nature-600 capitalize transition-colors duration-300 hover:text-nature-900"
+                        className="text-nature-600 capitalize transition-colors duration-300 hover:text-hover"
                       >
                         {link.title}
                       </Link>
@@ -53,9 +56,9 @@ export default function Footer() {
           })}
         </div>
       </div>
-      <div className="py-3 bg-nature-400 text-sm text-white flex items-center justify-center">
+      <div className="border-t border-gray/30 py-5 bg-nature-400 text-sm text-white flex items-center justify-center">
         Terms of Service | Privacy Policy | &copy; 2023 City Mosque Preston
       </div>
-    </>
+    </div>
   );
 }
