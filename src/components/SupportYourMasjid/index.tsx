@@ -7,7 +7,7 @@ export default function SupportYourMasjid() {
   const t = useTranslations();
   return (
     <section
-      className={`dir-dynamic bg-gradient-to-r from-foreground to-transparent section relative text-background`}
+      className={`dir-dynamic bg-gradient-to-r min-h-screen flex items-center from-foreground to-transparent section relative text-background`}
     >
       <Image
         src={"/images/support.jpg"}

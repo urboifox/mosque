@@ -1,3 +1,5 @@
+import MainButton from "@/components/ui/MainButton";
+import { Link } from "@/navigation";
 import Image from "next/image";
 
 export default function FatwaCard({
@@ -29,14 +31,19 @@ export default function FatwaCard({
           dangerouslySetInnerHTML={{
             __html: question,
           }}
-          className="max-w-lg"
+          className="max-w-[90%] mb-2"
         />
         <div
           dangerouslySetInnerHTML={{
             __html: answer.length > 100 ? answer.slice(0, 200) + "..." : answer,
           }}
-          className="text-dimmed"
+          className="text-dimmed font-inter"
         />
+        <Link className="mt-5" href={`/fatwa/${fatwa.id}`}>
+          <MainButton className="text-sm bg-transparent text-primary hover:text-foreground hover:border-foreground rounded-2xl">
+            Read More
+          </MainButton>
+        </Link>
       </div>
     </article>
   );

@@ -7,7 +7,7 @@ export default async function LatestFatwas({ locale }: { locale: string }) {
   const fatwas = await getFatwa();
 
   return (
-    <section className="section my-20 relative">
+    <section className="section relative">
       <Image
         src={"/images/hero-bg.png"}
         alt="background"

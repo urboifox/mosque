@@ -15,7 +15,7 @@ export default function FilterInputs() {
   }, [activeFilter]);
 
   return (
-    <div className="mx-auto mt-20 flex flex-col gap-8 items-center">
+    <div className="mx-auto my-20 flex flex-col gap-8 items-center">
       <div className="relative">
         <input
           className="min-w-[500px] px-8 bg-light-100 placeholder:text-dimmed text-foreground py-4 rounded-full"

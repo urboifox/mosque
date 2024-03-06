@@ -4,26 +4,20 @@ export const navLinks = [
     href: "/",
   },
   {
-    title: "Prayer Times",
-    href: "/prayer-times",
-  },
-
-  {
-    title: "live stream",
-    href: "/live-stream",
-    withDot: true,
+    title: "Articles",
+    href: "/articles",
   },
   {
-    title: "events",
-    href: "/events",
-  },
-  {
-    title: "contact",
-    href: "/contact",
+    title: "Fatwa Bank",
+    href: "/fatwa",
   },
   {
     title: "about us",
     href: "/about",
+  },
+  {
+    title: "contact",
+    href: "/contact",
   },
 ];
 

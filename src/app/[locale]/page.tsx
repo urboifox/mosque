@@ -15,8 +15,8 @@ export default async function Home({
     <main>
       <Hero />
       <PrayerTimes />
-      <LatestFatwas locale={locale} />
       <SupportYourMasjid />
+      <LatestFatwas locale={locale} />
     </main>
   );
 }
