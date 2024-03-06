@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
-import PageSwiper from "@/components/PageSwiper";
+import PrayerTimes from "@/components/PrayerTimes";
+import SupportYourMasjid from "@/components/SupportYourMasjid";
 import { getSettings } from "@/utils";
 
 export default async function Home() {
@@ -7,12 +8,9 @@ export default async function Home() {
   const [settings]: [SettingsResponse] = await Promise.all([settingsData]);
   return (
     <main>
-      {/* <PageSwiper
-        home
-        heading="Home"
-        media={[settings.homeBanner, settings.homeBanner]}
-      /> */}
       <Hero />
+      <PrayerTimes />
+      <SupportYourMasjid />
     </main>
   );
 }

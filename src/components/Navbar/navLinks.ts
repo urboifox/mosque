@@ -1,5 +1,9 @@
 export const navLinks = [
   {
+    title: "Home",
+    href: "/",
+  },
+  {
     title: "Prayer Times",
     href: "/prayer-times",
   },

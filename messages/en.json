@@ -1,8 +1,15 @@
 {
   "lang": "عربي",
-  "seeMore": "see more",
+  "seeMore": "See More",
+  "readMore": "Read More",
   "listenNow": "Listen now",
   "donateNow": "Donate now",
+  "prayerTimes": "Prayer Times",
+  "theFivePrayerTimes": "The Five Prayer Times",
+  "ourLatestArticles": "Our Latest Articles",
+  "articles": "Articles",
+  "alhadeed": "Al-Hadeed 57:18",
+  "supportUs": "Support Your Masjid Now.",
   "home": {
     "welcome": "Welcome",
     "to": "to",

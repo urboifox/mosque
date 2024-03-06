@@ -16,3 +16,9 @@ export async function getArticles() {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+export function formatDate(inputDate: string) {
+  const date = new Date(inputDate);
+  const options: any = { year: "numeric", month: "short", day: "2-digit" };
+  return date.toLocaleDateString("en-US", options);
+}

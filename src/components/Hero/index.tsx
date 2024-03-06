@@ -2,10 +2,13 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import MainButton from "../ui/MainButton";
 import { Link } from "@/navigation";
+import { getSettings } from "@/utils";
 
-export default function Hero() {
+export default async function Hero() {
+  const settings: SettingsResponse = await getSettings();
+
   return (
-    <section>
+    <section className="section">
       <div className="container">
         <div className="py-20 overflow-hidden p-8 rounded-[100px] relative min-h-96">
           <Image
@@ -16,14 +19,14 @@ export default function Hero() {
             decoding="async"
           />
           <div className="absolute w-full h-full -z-10 top-0 left-0 bg-light-100 opacity-70"></div>
-          <Content />
+          <Content settings={settings} />
         </div>
       </div>
     </section>
   );
 }
 
-function Content() {
+function Content({ settings }: { settings: SettingsResponse }) {
   const t = useTranslations();
   return (
     <div className="flex-col dir-dynamic lg:flex-row flex gap-10 justify-between items-center">
@@ -44,7 +47,7 @@ function Content() {
       </div>
       <div className="rounded-[60px] aspect-square overflow-hidden relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] min-h-96 h-full">
         <Image
-          src={"/images/hero-image.jpg"}
+          src={"/images/hero-image.jpg" || settings.homeBanner}
           alt="hero image"
           fill
           sizes="100%"

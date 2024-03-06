@@ -5,6 +5,8 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import { useTranslations } from "next-intl";
+import { Link } from "@/navigation";
+import { usePathname } from "next/navigation";
 type PageSwiperProps = {
   home?: boolean;
   heading?: string;
@@ -16,7 +18,7 @@ export default function PageSwiper({ home, heading, media }: PageSwiperProps) {
   const t = useTranslations();
 
   return (
-    <section className="h-[calc(100vh-70px)]">
+    <section className="h-96 relative">
       <Swiper
         navigation={isArr}
         modules={[Navigation, Autoplay]}
@@ -33,7 +35,7 @@ export default function PageSwiper({ home, heading, media }: PageSwiperProps) {
                 className="relative flex items-center justify-center w-full h-full"
               >
                 <Image
-                  src={image}
+                  src={"/images/section-banner.jpg" || image}
                   className="object-cover absolute -z-10 top-0 left-0"
                   alt="banner"
                   fill
@@ -43,9 +45,9 @@ export default function PageSwiper({ home, heading, media }: PageSwiperProps) {
           </>
         ) : (
           <>
-            <SwiperSlide className="relative flex items-center justify-center w-full h-full">
+            <SwiperSlide className="relative [flex items]-center justify-center w-full h-full">
               <Image
-                src={media || ""}
+                src={"/images/section-banner.jpg" || media}
                 className="object-cover absolute top-0 left-0"
                 alt="banner"
                 fill
@@ -54,19 +56,29 @@ export default function PageSwiper({ home, heading, media }: PageSwiperProps) {
           </>
         )}
       </Swiper>
-      <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600/80 shadow-md font-semibold tracking-widest text-nature-900 rounded-lg uppercase shadow-blue-300 text-3xl py-4 px-10 border border-px border-blue-300">
-        {home ? (
-          <div className="flex items-center capitalize flex-col text-center">
-            <p className="text-xl">
-              {t("home.welcome")}{" "}
-              <span className="text-blue-200">{t("home.to")}</span>
-            </p>
-            <h1>{t("home.cityMosquePreston")}</h1>
-          </div>
-        ) : (
-          <>{t(`titles.${heading}`)}</>
-        )}
+      <div className="absolute top-0 left-0 w-full h-full bg-[#01003880] z-20"></div>
+      <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-background font-bold font-cinzel capitalize text-2xl md:text-4xl lg:text-6xl">
+        <h2>{t(`titles.${heading}`)}</h2>
+        <ShowRoute />
       </div>
     </section>
+  );
+}
+
+function ShowRoute() {
+  const pathname = usePathname();
+  const pathesArray = pathname?.split("/");
+  const currentRoute = pathesArray[pathesArray.length - 1];
+  return (
+    <div className="capitalize text-lg font-cairo font-normal flex items-center gap-3 my-5 justify-center">
+      <Link
+        className="transition-colors duration-200 hover:text-primary"
+        href={"/"}
+      >
+        Home
+      </Link>
+      <p className="text-primary font-medium">{"//"}</p>
+      <div>{currentRoute}</div>
+    </div>
   );
 }

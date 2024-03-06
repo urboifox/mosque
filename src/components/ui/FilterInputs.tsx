@@ -15,10 +15,10 @@ export default function FilterInputs() {
   }, [activeFilter]);
 
   return (
-    <div className="mx-auto flex flex-col gap-8 items-center">
+    <div className="mx-auto mt-20 flex flex-col gap-8 items-center">
       <div className="relative">
         <input
-          className="min-w-[500px] px-8 bg-nature-800 placeholder:text-nature-500 text-nature-200 py-4 rounded-full"
+          className="min-w-[500px] px-8 bg-light-100 placeholder:text-dimmed text-foreground py-4 rounded-full"
           type="text"
           placeholder="Search"
           onChange={handleSearch}
@@ -34,8 +34,8 @@ export default function FilterInputs() {
           return (
             <MainButton
               key={i}
-              className={`rounded-full capitalize ${
-                activeFilter !== e && "to-nature-600 from-nature-600"
+              className={`rounded-full p-1 px-10 capitalize font-medium ${
+                activeFilter === e && "bg-transparent text-primary"
               }`}
               onClick={() => {
                 setActiveFilter(e);

@@ -1,5 +1,7 @@
 import PageSwiper from "@/components/PageSwiper";
 import CardsGrid from "@/components/ui/CardsGrid";
+import FilterInputs from "@/components/ui/FilterInputs";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { getArticles, getSettings } from "@/utils";
 
 export default async function ArticlesPage() {
@@ -11,6 +13,7 @@ export default async function ArticlesPage() {
   return (
     <div>
       <PageSwiper media={settings.articlesBanner} heading="articles" />
+      <FilterInputs />
       <CardsGrid data={articles} />
     </div>
   );
