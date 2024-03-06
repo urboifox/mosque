@@ -13,6 +13,26 @@ export async function getArticles() {
   return res.json();
 }
 
+export async function getPrayerTimes(
+  country: string = "GBR",
+  city: string = "GB-BDG"
+) {
+  const res = await fetch(
+    `http://api.aladhan.com/v1/timingsByCity?country=${country}&city=${city}`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to get prayer times");
+  }
+
+  return res.json();
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }

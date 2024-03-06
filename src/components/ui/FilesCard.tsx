@@ -5,7 +5,7 @@ export default function FilesCard({ data }: { data: any }) {
     <article className="relative rounded-xl border-[2px] border border-blue-300 flex flex-col gap-4 p-4">
       <Image
         fill
-        src={data?.backgroundImage || "/images/logo.png"}
+        src={data?.backgroundImage || "/images/logo.svg"}
         alt={data?.title}
         className="opacity-30 -z-10"
       />

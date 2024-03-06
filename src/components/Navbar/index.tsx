@@ -9,7 +9,7 @@ export default function Navbar() {
     <header className="relative container flex items-center justify-between h-[80px]">
       <Link href="/">
         <Image
-          src={"/images/logo.png"}
+          src={"/images/logo.svg"}
           width={135}
           height={40}
           alt="Masjid logo"
@@ -19,7 +19,7 @@ export default function Navbar() {
         {navLinks.map((link, i) => {
           return (
             <Link
-              className="relative capitalize font-semibold text-sm hover:text-primary transition-colors !font-cinzel hover:text-[#232f4b] duration-300"
+              className="relative uppercase font-semibold text-sm hover:text-primary transition-colors !font-cinzel hover:text-[#232f4b] duration-300"
               href={link.href}
               key={i}
             >

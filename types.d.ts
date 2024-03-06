@@ -34,3 +34,39 @@ type ArticleResponse = {
   views: number;
   topList: boolean;
 };
+
+type PrayerTimesResponse = {
+  code: number;
+  status: string;
+  data: {
+    timings: {
+      Fajr: string;
+      Sunrise: string;
+      Dhuhr: string;
+      Asr: string;
+      Sunset: string;
+      Maghrib: string;
+      Isha: string;
+      Imsak: string;
+      Midnight: string;
+      Firstthird: string;
+      Lastthird: string;
+    };
+    date: {
+      readable: string;
+      timestamp: string;
+      hijri: any;
+      gregorian: any;
+    };
+    meta: {
+      latitude: number;
+      longitude: number;
+      timezone: string;
+      method: string;
+      latitudeAdjustmentMethod: string;
+      midnightMode: string;
+      school: string;
+      offset: any;
+    };
+  };
+};

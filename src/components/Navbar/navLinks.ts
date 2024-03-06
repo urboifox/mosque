@@ -7,6 +7,7 @@ export const navLinks = [
     title: "Prayer Times",
     href: "/prayer-times",
   },
+
   {
     title: "live stream",
     href: "/live-stream",
