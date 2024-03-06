@@ -1,12 +1,11 @@
 import { getPrayerTimes } from "@/utils";
-import SectionHeader from "../ui/SectionHeader";
 import { useTranslations } from "next-intl";
 
 export default async function PrayerTimes() {
   const times = await getPrayerTimes();
   return (
     <div>
-      <SectionHeader name="prayerTimes" title="theFivePrayerTimes" />
+      {/* <SectionHeader name="prayerTimes" title="theFivePrayerTimes" /> */}
       <Displayer times={times} />
     </div>
   );
@@ -46,7 +45,7 @@ function Displayer({ times }: { times: PrayerTimesResponse }) {
   ];
 
   return (
-    <div className="px-20 mb-20">
+    <div className="px-20">
       <div className="text-xl flex flex-col items-center gap-5 text-center container rounded-[3rem] text-background py-10 bg-foreground">
         <p className="font-bold text-primary font-cinzel">
           {t("today")}: {date.readable}

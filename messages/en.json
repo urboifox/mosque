@@ -22,6 +22,10 @@
   "midnight": "Midnight",
   "firstThird": "First Third",
   "lastThird": "Last Third",
+  "fatwa": {
+    "title": "Latest Fatwas",
+    "description": "Explore our latest fatwas."
+  },
   "home": {
     "welcome": "Welcome",
     "to": "to",

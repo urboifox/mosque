@@ -22,6 +22,10 @@
   "firstThird": "الربع الاول",
   "lastThird": "الربع الاخير",
   "supportUs": "ادعم مسجدك الان",
+  "fatwa": {
+    "title": "اخر الفتوات",
+    "description": "تصفح فتواتنا الاخيرة"
+  },
   "home": {
     "welcome": "مرحبا",
     "to": "في",

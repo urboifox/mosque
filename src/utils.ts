@@ -13,9 +13,15 @@ export async function getArticles() {
   return res.json();
 }
 
+export async function getFatwa(fatwaId?: string) {
+  const res = await fetch(`${BASE_URL}/Fatwa${fatwaId ? `/${fatwaId}` : ""}`);
+
+  return res.json();
+}
+
 export async function getPrayerTimes(
   country: string = "GBR",
-  city: string = "GB-BDG"
+  city: string = "London"
 ) {
   const res = await fetch(
     `http://api.aladhan.com/v1/timingsByCity?country=${country}&city=${city}`,

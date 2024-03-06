@@ -35,6 +35,35 @@ type ArticleResponse = {
   topList: boolean;
 };
 
+type Fatwa = {
+  id: number;
+  title_En: string;
+  title_Ar: string;
+  description_En: string;
+  description_Ar: string;
+  question_En: string;
+  question_Ar: string;
+  email: string;
+  age: number;
+  city: string;
+  answer_Ar: string;
+  answer_En: string;
+  createdDate: string;
+  answerAuthor: string;
+  gender: string;
+  privateFileId: number;
+  privateFile_Ar: string;
+  privateFile_En: string;
+  threadId: number;
+  thread_Ar: string;
+  thread_En: string;
+  activeState: boolean;
+  views: number;
+  topList: boolean;
+};
+
+type FatwasResponse = Fatwa[];
+
 type PrayerTimesResponse = {
   code: number;
   status: string;

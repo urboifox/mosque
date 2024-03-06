@@ -10,8 +10,8 @@ export default function Footer() {
   const allLinks = navLinks.concat(subNavLinks);
   const chunksLinks = [];
 
-  for (let i = 0; i < allLinks.length; i += 5) {
-    chunksLinks.push(allLinks.slice(i, i + 5));
+  for (let i = 0; i < allLinks.length; i += 6) {
+    chunksLinks.push(allLinks.slice(i, i + 6));
   }
 
   return (
