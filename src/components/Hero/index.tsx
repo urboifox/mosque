@@ -2,11 +2,12 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import MainButton from "../ui/MainButton";
 import { Link } from "@/navigation";
-import { getSettings } from "@/utils";
 
-export default async function Hero() {
-  const settings: SettingsResponse = await getSettings();
-
+export default async function Hero({
+  settings,
+}: {
+  settings: SettingsResponse;
+}) {
   return (
     <section className="section">
       <div className="container">

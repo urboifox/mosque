@@ -13,6 +13,9 @@ input:focus {
 .font-inter {
   font-family: var(--font-inter);
 }
+.main__button.active {
+  @apply bg-transparent text-primary border-primary;
+}
 
 .dir-dynamic {
   direction: ltr;

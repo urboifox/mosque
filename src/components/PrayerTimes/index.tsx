@@ -45,7 +45,7 @@ function Displayer({ times }: { times: PrayerTimesResponse }) {
   ];
 
   return (
-    <div className="px-20 mb-20">
+    <div className="px-3 md:px-20 mb-20">
       <div className="text-xl flex flex-col items-center gap-5 text-center container rounded-[3rem] text-background py-10 bg-foreground">
         <p className="font-bold text-primary font-cinzel">
           {t("today")}: {date.readable}
@@ -57,10 +57,10 @@ function Displayer({ times }: { times: PrayerTimesResponse }) {
                 className=" p-5 flex gap-3 items-center justify-center flex-col text-center"
                 key={i}
               >
-                <h2 className="text-3xl font-bold font-cinzel capitalize">
+                <h2 className="text-xl md:text-3xl font-bold font-cinzel capitalize">
                   {t(e.name)}
                 </h2>
-                <p className="font-medium">{e.time}</p>
+                <p className="text-base font-medium">{e.time}</p>
               </article>
             );
           })}

@@ -8,14 +8,40 @@ export async function getSettings() {
   return res.json();
 }
 
-export async function getArticles() {
-  const res = await fetch(`${BASE_URL}/Article`);
+export async function getArticles(articleId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/Article${articleId ? `/${articleId}` : ""}`
+  );
   return res.json();
 }
+export async function getBook(bookId?: string) {
+  const res = await fetch(`${BASE_URL}/Book${bookId ? `/${bookId}` : ""}`);
+  return res.json();
+}
+export async function getAudio(audioId?: string) {
+  const res = await fetch(`${BASE_URL}/Audio${audioId ? `/${audioId}` : ""}`);
+  return res.json();
+}
+// export async function getVisual(visualId?: string) {
+//   const res = await fetch(
+//     `${BASE_URL}/Visual${visualId ? `/${visualId}` : ""}`
+//   );
+//   return res.json();
+// }
+// export async function getInvitationCard(cardId?: string) {
+//   const res = await fetch(
+//     `${BASE_URL}/Invitation${cardId ? `/${cardId}` : ""}`
+//   );
+//   return res.json();
+// }
 
 export async function getFatwa(fatwaId?: string) {
   const res = await fetch(`${BASE_URL}/Fatwa${fatwaId ? `/${fatwaId}` : ""}`);
+  return res.json();
+}
 
+export async function getNews(newsId?: string) {
+  const res = await fetch(`${BASE_URL}/News${newsId ? `/${newsId}` : ""}`);
   return res.json();
 }
 

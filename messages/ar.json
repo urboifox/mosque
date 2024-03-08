@@ -23,6 +23,10 @@
   "lastThird": "الربع الاخير",
   "supportUs": "ادعم مسجدك الان",
   "unkown": "مجهول",
+  "news": {
+    "title": "الاخبار",
+    "description": "اخر اخبارنا"
+  },
   "fatwa": {
     "title": "اخر الفتوات",
     "description": "تصفح فتواتنا الاخيرة"

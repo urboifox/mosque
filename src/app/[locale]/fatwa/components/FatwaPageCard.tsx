@@ -1,4 +1,3 @@
-import MainButton from "@/components/ui/MainButton";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";

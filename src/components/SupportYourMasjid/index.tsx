@@ -18,7 +18,7 @@ export default function SupportYourMasjid() {
       />
       <div className="container ">
         <div className="lg:w-1/2 flex flex-col gap-4">
-          <h2 className="text-6xl font-cinzel font-bold mb-5">
+          <h2 className="text-4xl md:text-6xl font-cinzel font-bold mb-5">
             {t("supportUs")}
           </h2>
           <p className="font-cairo text-light-200">
