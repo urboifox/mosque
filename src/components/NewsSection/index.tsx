@@ -11,7 +11,7 @@ export default async function NewsSection() {
       <div className="container">
         <SectionHeader name="news.title" title="news.description" />
         <div className="flex justify-between flex-col lg:flex-row gap-5">
-          <div className="max-lg:w-full w-1/2">
+          <div className="max-lg:w-full flex-1 w-1/2">
             {
               <PrimaryCard
                 className="max-sm:flex-col"
@@ -21,7 +21,7 @@ export default async function NewsSection() {
               />
             }
           </div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-1 flex-col gap-5">
             {news.map((e, i) => {
               return (
                 <PrimaryCard

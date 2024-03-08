@@ -35,8 +35,8 @@ export const subNavLinks = [
     href: "/food-parcle",
   },
   {
-    title: "prayer with me",
-    href: "/prayer-with-me",
+    title: "pray with me",
+    href: "/pray-with-me",
   },
   {
     title: "al furqan school",

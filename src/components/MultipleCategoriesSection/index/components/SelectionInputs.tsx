@@ -11,11 +11,13 @@ export default function SelectionInputs({
   setActiveIndex: Dispatch<SetStateAction<number>>;
 }) {
   return (
-    <div className="w-max mx-auto my-10 flex flex-wrap gap-3">
+    <div className="w-max mx-auto my-10 flex max-w-full flex-wrap gap-3">
       {filters.map((e, i) => {
         return (
           <MainButton
-            className={`${i === active && "active"} py-3 rounded-full text-sm`}
+            className={`${
+              i === active && "active"
+            } text-xs p-2 sm:py-3 sm:px-6 rounded-full sm:text-sm`}
             onClick={() => setActiveIndex(i)}
             key={i}
           >

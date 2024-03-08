@@ -16,10 +16,10 @@ export default function FilterInputs({
   }
 
   return (
-    <div className="mx-auto my-20 flex flex-col gap-8 items-center">
+    <div className="mx-auto max-w-screen my-20 flex flex-col gap-8 items-center">
       <div className="relative">
         <input
-          className="min-w-[500px] px-8 bg-light-100 placeholder:text-dimmed text-foreground py-4 rounded-full"
+          className="w-full md:min-w-[500px] px-8 bg-light-100 placeholder:text-dimmed text-foreground py-4 rounded-full"
           type="text"
           placeholder="Search"
           onChange={handleSearch}
@@ -30,12 +30,12 @@ export default function FilterInputs({
           className="absolute top-1/2 right-8 -translate-y-1/2"
         />
       </div>
-      <div className={`flex items-center gap-5`}>
+      <div className={`flex items-center gap-2 sm:gap-5`}>
         {filters.map((e, i) => {
           return (
             <MainButton
               key={i}
-              className={`rounded-full p-1 px-10 capitalize font-medium ${
+              className={`rounded-full max-sm:p-2 max-sm:text-xs p-1 px-10 capitalize font-medium ${
                 filters[activeIndex] === e && "active"
               }`}
               onClick={() => {

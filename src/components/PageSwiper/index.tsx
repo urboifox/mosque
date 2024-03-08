@@ -77,7 +77,7 @@ function ShowRoute() {
         Home
       </Link>
       <p className="text-primary font-medium">{"//"}</p>
-      <div>{currentRoute}</div>
+      <div>{currentRoute.split("-").join(" ")}</div>
     </div>
   );
 }
