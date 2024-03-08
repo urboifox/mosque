@@ -1,18 +1,19 @@
 "use client";
 import { CiSearch } from "react-icons/ci";
 import MainButton from "./MainButton";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
-export default function FilterInputs() {
+export default function FilterInputs({
+  activeIndex,
+  setActiveIndex,
+}: {
+  activeIndex: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+}) {
   const filters = ["newest", "views", "popular", "a-z"];
-  const [activeFilter, setActiveFilter] = useState("newest");
   function handleSearch(e: any) {
     // TODO: implement
   }
-
-  useEffect(() => {
-    // TODO: implement
-  }, [activeFilter]);
 
   return (
     <div className="mx-auto my-20 flex flex-col gap-8 items-center">
@@ -35,10 +36,10 @@ export default function FilterInputs() {
             <MainButton
               key={i}
               className={`rounded-full p-1 px-10 capitalize font-medium ${
-                activeFilter === e && "bg-transparent text-primary"
+                filters[activeIndex] === e && "active"
               }`}
               onClick={() => {
-                setActiveFilter(e);
+                setActiveIndex(i);
               }}
             >
               {e}

@@ -8,12 +8,11 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import { usePathname } from "next/navigation";
 type PageSwiperProps = {
-  home?: boolean;
   heading?: string;
   media?: string[] | string;
 };
 
-export default function PageSwiper({ home, heading, media }: PageSwiperProps) {
+export default function PageSwiper({ heading, media }: PageSwiperProps) {
   const isArr = media instanceof Array;
   const t = useTranslations();
 
@@ -22,8 +21,8 @@ export default function PageSwiper({ home, heading, media }: PageSwiperProps) {
       <Swiper
         navigation={isArr}
         modules={[Navigation, Autoplay]}
-        loop
-        autoplay
+        loop={isArr}
+        autoplay={isArr}
         slidesPerView={1}
         className="h-full relative"
       >
