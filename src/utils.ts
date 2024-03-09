@@ -41,8 +41,12 @@ export async function getFatwa(fatwaId?: string) {
   return res.json();
 }
 
-export async function getNews(newsId?: string) {
-  const res = await fetch(`${BASE_URL}/News${newsId ? `/${newsId}` : ""}`);
+export async function getNews(newsId?: string, newsTypeId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/News${newsId ? `/${newsId}` : ""}${
+      newsTypeId ? `?NewsTypeId=${newsTypeId}` : ""
+    }`
+  );
   return res.json();
 }
 
