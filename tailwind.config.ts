@@ -17,6 +17,9 @@ const config: Config = {
           100: "#f6f6f6",
           200: "#E8E8E8",
         },
+        dark: {
+          100: "#232f4b",
+        },
         background: "#ffffff",
         dimmed: "#625F71",
         gray: "#656565",

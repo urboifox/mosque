@@ -84,6 +84,13 @@ type NewsResponse = {
 
 type FatwasResponse = Fatwa[];
 
+type NewsTypesResponse = {
+  id: number;
+  name_En: string;
+  name_Ar: string;
+  activeState: boolean;
+};
+
 type PrayerTimesResponse = {
   code: number;
   status: string;

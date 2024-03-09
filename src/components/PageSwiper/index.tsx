@@ -7,12 +7,20 @@ import "swiper/css/navigation";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import { usePathname } from "next/navigation";
+import { cn } from "@/utils";
 type PageSwiperProps = {
   heading?: string;
   media?: string[] | string;
+  path?: string;
+  className?: string;
 };
 
-export default function PageSwiper({ heading, media }: PageSwiperProps) {
+export default function PageSwiper({
+  heading,
+  media,
+  path,
+  className,
+}: PageSwiperProps) {
   const isArr = media instanceof Array;
   const t = useTranslations();
 
@@ -57,14 +65,14 @@ export default function PageSwiper({ heading, media }: PageSwiperProps) {
       </Swiper>
       <div className="absolute top-0 left-0 w-full h-full bg-[#01003880] z-20"></div>
       <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-background font-bold font-cinzel capitalize text-2xl md:text-4xl lg:text-6xl">
-        <h2>{t(`titles.${heading}`)}</h2>
-        <ShowRoute />
+        <h2 className={cn("text-center", className)}>{t(`${heading}`)}</h2>
+        <ShowRoute path={path} />
       </div>
     </section>
   );
 }
 
-function ShowRoute() {
+function ShowRoute({ path }: { path: string | undefined }) {
   const pathname = usePathname();
   const pathesArray = pathname?.split("/");
   const currentRoute = pathesArray[pathesArray.length - 1];
@@ -77,7 +85,7 @@ function ShowRoute() {
         Home
       </Link>
       <p className="text-primary font-medium">{"//"}</p>
-      <div>{currentRoute.split("-").join(" ")}</div>
+      <div>{path || currentRoute.split("-").join(" ")}</div>
     </div>
   );
 }

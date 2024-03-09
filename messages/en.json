@@ -7,7 +7,6 @@
   "prayerTimes": "Prayer Times",
   "theFivePrayerTimes": "The Five Prayer Times",
   "ourLatestArticles": "Our Latest Articles",
-  "articles": "Articles",
   "alhadeed": "Al-Hadeed 57:18",
   "supportUs": "Support Your Masjid Now.",
   "fajr": "Fajr",
@@ -23,39 +22,44 @@
   "firstThird": "First Third",
   "lastThird": "Last Third",
   "unkown": "Unkown",
-  "fatwa": {
+  "aboutUs": "About Us",
+  "aboutUsHeading": "We can work togethe for a better future",
+  "aboutUsDescription": "Assalamu Alaikum (Peace be upon you) and welcome to a place of spiritual enrichment, community connection, and the pursuit of knowledge—welcome to Isteqbal Islamic Center.Isteqbal Islamic Center is dedicated to fostering a strong and vibrant Muslim community. At Isteqbal, we strive to create an inclusive and nurturing environment for Muslims from all walks of life. Our center is a sanctuary for those seeking a deeper connection with their faith, a sense of community.",
+  "callUs": "Call us",
+  "fatwaHeader": {
     "title": "Latest Fatwas",
     "description": "Explore our latest fatwas."
   },
-  "home": {
+  "homeHeader": {
     "welcome": "Welcome",
     "to": "to",
     "cityMosquePreston": "City Mosque Preston",
     "title": "“Turn To Allah Before You Return To Allah.”",
     "description": "The Heart That Beats For Allah Is Always A Stranger Among The Hearts That Beat For The Dunya (World)."
   },
-  "news": {
+  "newsHeader": {
     "title": "News",
     "description": "Our Latest News"
   },
-  "titles": {
-    "home": "Home",
-    "about": "About us",
-    "contact": "Contact",
-    "articles": "Articles",
-    "agaza": "Agaza",
-    "audios": "audios",
-    "donate": "donate",
-    "events": "events",
-    "fatwa": "fatwa",
-    "live": "live stream",
-    "media": "media",
-    "news": "news",
-    "private": "private files",
-    "prayWithMe": "Pray With Me",
-    "visuals": "visuals",
-    "books": "Books"
-  },
+  "home": "Home",
+  "about": "About us",
+  "by": "By",
+  "views": "Views",
+  "date": "Date",
+  "contact": "Contact",
+  "articles": "Articles",
+  "agaza": "Agaza",
+  "audios": "audios",
+  "donate": "donate",
+  "events": "events",
+  "fatwa": "fatwa",
+  "live": "live stream",
+  "media": "media",
+  "news": "news",
+  "private": "private files",
+  "prayWithMe": "Pray With Me",
+  "visuals": "visuals",
+  "books": "Books",
   "footer": {
     "description": "Conveying Islam based on evidences from the Quran and Sunnah, upon the understanding of our pious predecessors"
   }

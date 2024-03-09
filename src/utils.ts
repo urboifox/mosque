@@ -2,6 +2,7 @@ import { BASE_URL } from "./constants";
 
 import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import selectTranslation from "./hooks/selectTranslation";
 
 export async function getSettings() {
   const res = await fetch(`${BASE_URL}/AppSettings`);
@@ -43,6 +44,29 @@ export async function getFatwa(fatwaId?: string) {
 export async function getNews(newsId?: string) {
   const res = await fetch(`${BASE_URL}/News${newsId ? `/${newsId}` : ""}`);
   return res.json();
+}
+
+export async function getNewsTypes() {
+  const res = await fetch(`${BASE_URL}/NewsType`);
+  return res.json();
+}
+
+export async function getContentWithCategories(
+  types: any[],
+  endpoint: string,
+  param: string,
+  locale: string
+) {
+  let content: any = [];
+  types.forEach(async (type) => {
+    // loop over the types and fetch each type's data
+    const res = await fetch(`${BASE_URL}/${endpoint}?${param}=${type.id}`);
+    const typeData = await res.json();
+    const { name } = selectTranslation(locale, type);
+    content.push({ type, typeData, endpoint, name });
+  });
+
+  return content;
 }
 
 export async function getPrayerTimes(

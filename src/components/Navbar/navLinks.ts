@@ -16,16 +16,12 @@ export const navLinks = [
     href: "/about",
   },
   {
-    title: "contact",
-    href: "/contact",
+    title: "news",
+    href: "/news",
   },
 ];
 
 export const subNavLinks = [
-  {
-    title: "fatwa bank",
-    href: "/fatwa-bank",
-  },
   {
     title: "agaza",
     href: "/agaza",
@@ -65,10 +61,6 @@ export const subNavLinks = [
   {
     title: "books",
     href: "/books",
-  },
-  {
-    title: "articles",
-    href: "/articles",
   },
   {
     title: "news",

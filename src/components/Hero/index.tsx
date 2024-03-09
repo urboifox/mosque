@@ -39,9 +39,11 @@ function Content({ settings }: { settings: SettingsResponse }) {
           height={91}
         />
         <h1 className="text-foreground capitalize font-cinzel font-bold text-xl md:text-4xl md:leading-[50px] lg:!leading-[80px] lg:text-6xl">
-          {t("home.title")}
+          {t("homeHeader.title")}
         </h1>
-        <p className="text-sm md:text-xl max-w-xl">{t("home.description")}</p>
+        <p className="text-sm md:text-xl max-w-xl">
+          {t("homeHeader.description")}
+        </p>
         <Link href="/donate">
           <MainButton>{t("donateNow")}</MainButton>
         </Link>

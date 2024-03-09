@@ -8,7 +8,6 @@
   "donateNow": "تبرع الان",
   "ourLatestArticles": "اخر المقالات",
   "alhadeed": "الحديد 57:18",
-  "articles": "مقالات",
   "fajr": "الفجر",
   "sunrise": "الشروق",
   "dhuhr": "الظهر",
@@ -19,43 +18,47 @@
   "isha": "العشاء",
   "imsak": "الامساك",
   "midnight": "منتصف الليل",
+  "by": "من",
   "firstThird": "الربع الاول",
+  "views": "المشاهدات",
   "lastThird": "الربع الاخير",
+  "date": "التاريخ",
   "supportUs": "ادعم مسجدك الان",
   "unkown": "مجهول",
-  "news": {
+  "aboutUs": "من نحن",
+  "aboutUsHeading": "يمكننا العمل معا من اجل مستقبل افضل",
+  "aboutUsDescription": "السلام عليكم ومرحبا بكم في مكان الإثراء الروحي، والتواصل المجتمعي، والسعي وراء المعرفة - مرحبا بكم في مركز استقبال الإسلامي. مركز استقبال الإسلامي مكرس لتعزيز مجتمع مسلم قوي وحيوي.  في استقبال، نسعى جاهدين لخلق بيئة شاملة ورعاية للمسلمين من جميع مناحي الحياة. يعد مركزنا ملاذًا لأولئك الذين يسعون إلى التواصل بشكل أعمق مع عقيدتهم، والشعور بالانتماء للمجتمع.",
+  "newsHeader": {
     "title": "الاخبار",
     "description": "اخر اخبارنا"
   },
-  "fatwa": {
+  "fatwaHeader": {
     "title": "اخر الفتوات",
     "description": "تصفح فتواتنا الاخيرة"
   },
-  "home": {
+  "homeHeader": {
     "welcome": "مرحبا",
     "to": "في",
     "cityMosquePreston": "مسجد مدينة بريستون",
     "title": "“عد الى الله قبل ان تعود الى الله”",
     "description": "القلب الذي ينبض لله دائما غريب وسط القلوب التي تبض للدنيا"
   },
-  "titles": {
-    "home": "الرئيسية",
-    "about": "من نحن",
-    "contact": "تواصل معنا",
-    "articles": "المقالات",
-    "prayWithMe": "صلي معي",
-    "agaza": "اجازة",
-    "audios": "الصوتيات",
-    "donate": "تبرع",
-    "events": "الاحداث",
-    "fatwa": "الفتوة",
-    "live": "بث مباشر",
-    "media": "ملفات",
-    "news": "الاخبار",
-    "private": "الملفات الخاصة",
-    "visuals": "بصريات",
-    "books": "كتب"
-  },
+  "home": "الرئيسية",
+  "about": "من نحن",
+  "contact": "تواصل معنا",
+  "articles": "المقالات",
+  "prayWithMe": "صلي معي",
+  "agaza": "اجازة",
+  "audios": "الصوتيات",
+  "donate": "تبرع",
+  "events": "الاحداث",
+  "fatwa": "الفتوة",
+  "live": "بث مباشر",
+  "media": "ملفات",
+  "news": "الاخبار",
+  "private": "الملفات الخاصة",
+  "visuals": "بصريات",
+  "books": "كتب",
   "footer": {
     "description": "Conveying Islam based on evidences from the Quran and Sunnah, upon the understanding of our pious predecessors"
   }

@@ -16,7 +16,7 @@ export default function FilterInputs({
   }
 
   return (
-    <div className="mx-auto max-w-screen my-20 flex flex-col gap-8 items-center">
+    <div className="mx-auto max-w-screen mb-20 my-10 flex flex-col gap-8 items-center">
       <div className="relative">
         <input
           className="w-full md:min-w-[500px] px-8 bg-light-100 placeholder:text-dimmed text-foreground py-4 rounded-full"

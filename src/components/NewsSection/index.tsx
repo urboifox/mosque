@@ -9,13 +9,13 @@ export default async function NewsSection() {
   return (
     <section className="section">
       <div className="container">
-        <SectionHeader name="news.title" title="news.description" />
+        <SectionHeader name="newsHeader.title" title="newsHeader.description" />
         <div className="flex justify-between flex-col lg:flex-row gap-5">
           <div className="max-lg:w-full flex-1 w-1/2">
             {
               <PrimaryCard
                 className="max-sm:flex-col"
-                href={`news/${res[0].id}`}
+                href={`news/${res[0].newsType_En?.toLowerCase()}/${res[0].id}`}
                 data={res[0]}
                 key={`news`}
               />
@@ -26,7 +26,7 @@ export default async function NewsSection() {
               return (
                 <PrimaryCard
                   className="sm:flex-row sm:items-center"
-                  href={`news/${e.id}`}
+                  href={`news/${e.newsType_En?.toLowerCase()}/${e.id}`}
                   key={i}
                   data={e}
                 />

@@ -12,7 +12,7 @@ export default function Articles({ data }: { data: ArticleResponse[] }) {
   return (
     <>
       <FilterInputs activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-      <CardsGrid data={articles} />
+      <CardsGrid to="articles" data={articles} />
     </>
   );
 }

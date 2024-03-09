@@ -28,7 +28,7 @@ export default function Footer() {
                   alt={"mosque"}
                 />
                 <h3 className="text-white text-2xl font-medium">
-                  {t("home.cityMosquePreston")}
+                  {t("homeHeader.cityMosquePreston")}
                 </h3>
               </div>
               <p className="text-[#d6dae1] leading-6 max-w-xl">

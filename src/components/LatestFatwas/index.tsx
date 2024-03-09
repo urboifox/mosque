@@ -17,7 +17,10 @@ export default async function LatestFatwas({ locale }: { locale: string }) {
       />
       <div className="absolute w-full h-full -z-10 top-0 left-0 bg-light-100 opacity-80 -z-10"></div>
       <div className="container">
-        <SectionHeader name="fatwa.title" title="fatwa.description" />
+        <SectionHeader
+          name="fatwaHeader.title"
+          title="fatwaHeader.description"
+        />
         <FatwasSlider fatwas={fatwas} locale={locale} />
       </div>
     </section>
