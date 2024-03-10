@@ -1,8 +1,11 @@
 "use client";
 import { requestEgaza } from "@/actions";
-import SectionHeader from "@/components/ui/SectionHeader";
+import MainButton from "@/components/ui/MainButton";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useFormStatus } from "react-dom";
+import toast from "react-hot-toast";
 import Select from "react-select";
 
 function makeOptions(data: any) {
@@ -10,7 +13,6 @@ function makeOptions(data: any) {
 }
 
 export default function EgazaForm({
-  locale,
   categories,
   subcategories,
   sheikh,
@@ -24,40 +26,116 @@ export default function EgazaForm({
   const subcategoriesOptions = makeOptions(subcategories);
   const sheikhOptions = makeOptions(sheikh);
   const t = useTranslations();
+  const router = useRouter();
+
+  const [errors, setErrors] = useState({
+    Id: "",
+    EgazaSubcategoryId: "",
+    EgazaSheikhId: "",
+    Age: "",
+    Name: "",
+    Email: "",
+    City: "",
+    Phone1: "",
+    Notes: "",
+  });
 
   return (
     <section className="section">
       <div className="container">
-        <SectionHeader name="egaza" title="chooseYourEgaza" />
         <form
-          action={(formData: FormData) => {
-            requestEgaza(formData);
+          action={async (formData: FormData) => {
+            const res = await requestEgaza(formData);
+
+            if (res.status === 200) {
+              toast(t("applicationSent"));
+              router.push("/");
+            } else {
+              setErrors(res.errors);
+            }
           }}
           className="max-w-2xl mx-auto"
         >
-          <div className="flex flex-col gap-3">
-            <Select
-              placeholder={t("category")}
-              isSearchable
-              name="Id"
-              options={categoriesOptions}
-            />
-            <Select
-              placeholder={t("subcategory")}
-              isSearchable
-              name="EgazaSubcategoryId"
-              options={subcategoriesOptions}
-            />
-            <Select
-              placeholder={t("sheikh")}
-              isSearchable
-              name="EgazaSheikhId"
-              options={sheikhOptions}
-            />
+          <div className="flex flex-col gap-10 mt-10">
+            <div className="flex dir-dynamic flex-col gap-3">
+              <h2 className="text-center text-3xl capitalize font-bold font-cinzel">
+                {t("egazaType")}
+              </h2>
+              <Select
+                placeholder={t("category")}
+                isSearchable
+                name="Id"
+                options={categoriesOptions}
+              />
+              {errors.Id && <small className="text-red-500">{errors.Id}</small>}
+              <Select
+                placeholder={t("subcategory")}
+                isSearchable
+                name="EgazaSubcategoryId"
+                options={subcategoriesOptions}
+              />
+              {errors.EgazaSubcategoryId && (
+                <small className="text-red-500">
+                  {errors.EgazaSubcategoryId}
+                </small>
+              )}
+              <Select
+                placeholder={t("sheikh")}
+                isSearchable
+                name="EgazaSheikhId"
+                options={sheikhOptions}
+              />
+              {errors.EgazaSheikhId && (
+                <small className="text-red-500">{errors.EgazaSheikhId}</small>
+              )}
+            </div>
+            <div className="flex dir-dynamic flex-col gap-3">
+              <h2 className="text-center text-3xl capitalize font-bold font-cinzel">
+                {t("yourInformation")}
+              </h2>
+              <input type="text" name="Name" placeholder={t("name")} />
+              {errors.Name && (
+                <small className="text-red-500">{errors.Name}</small>
+              )}
+              <input type="email" name="Email" placeholder={t("email")} />
+              {errors.Email && (
+                <small className="text-red-500">{errors.Email}</small>
+              )}
+              <input type="number" name="Age" placeholder={t("age")} />
+              {errors.Age && (
+                <small className="text-red-500">{errors.Age}</small>
+              )}
+              <input type="text" name="City" placeholder={t("city")} />
+              {errors.City && (
+                <small className="text-red-500">{errors.City}</small>
+              )}
+              <input type="number" name="phone" placeholder={t("phone")} />
+              {errors.Phone1 && (
+                <small className="text-red-500">{errors.Phone1}</small>
+              )}
+              <textarea name="Notes" placeholder={t("notes")}></textarea>
+              {errors.Notes && (
+                <small className="text-red-500">{errors.Notes}</small>
+              )}
+            </div>
+            <SubmitButton />
           </div>
-          <button>send</button>
         </form>
       </div>
     </section>
+  );
+}
+
+function SubmitButton() {
+  const t = useTranslations();
+  const { pending } = useFormStatus();
+
+  return (
+    <MainButton
+      disabled={pending}
+      className="bg-foreground border-foreground hover:text-foreground rounded-md"
+    >
+      {t(pending ? "submitting" : "submit")}
+    </MainButton>
   );
 }

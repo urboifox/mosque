@@ -24,8 +24,8 @@ export const navLinks = [
     href: "/audio",
   },
   {
-    title: "agaza",
-    href: "/agaza",
+    title: "egaza",
+    href: "/egaza",
   },
 ];
 

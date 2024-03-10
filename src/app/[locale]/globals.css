@@ -50,6 +50,23 @@ html[lang="ar"] .flip-dynamic {
 .section {
   @apply py-20;
 }
+textarea:focus,
+input:focus {
+  outline: none;
+}
+input,
+textarea {
+  @apply bg-light-100 my-1 rounded-md w-full py-3 px-6;
+}
+small {
+  @apply -mt-2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .swiper-button-prev:after {
   color: white;
