@@ -113,6 +113,22 @@ type EgazaSheikh = {
   name_En: string;
   name_Ar: string;
 };
+type BooksResponse = {
+  "id": number,
+  "title_En": string,
+  "title_Ar": string,
+  "description_En": string,
+  "description_Ar": string,
+  "path": string,
+  "bannerUrl": string,
+  "author": string,
+  "size": string,
+  "activeState": boolean,
+  "views": number,
+  "topList": boolean,
+  "bookFile": string,
+  "banner": string
+}
 
 type PrayerTimesResponse = {
   code: number;
