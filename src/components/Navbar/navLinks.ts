@@ -1,14 +1,14 @@
 export const navLinks = [
   {
-    title: "Home",
+    title: "home",
     href: "/",
   },
   {
-    title: "Articles",
+    title: "articles",
     href: "/articles",
   },
   {
-    title: "Fatwa Bank",
+    title: "fatwa bank",
     href: "/fatwa",
   },
   {
@@ -23,13 +23,13 @@ export const navLinks = [
     title: "audio",
     href: "/audio",
   },
-];
-
-export const subNavLinks = [
   {
     title: "agaza",
     href: "/agaza",
   },
+];
+
+export const subNavLinks = [
   {
     title: "food parcle",
     href: "/food-parcle",

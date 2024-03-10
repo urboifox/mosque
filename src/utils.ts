@@ -45,6 +45,19 @@ export async function getFatwa(fatwaId?: string) {
   return res.json();
 }
 
+export async function getEgazaCategories() {
+  const res = await fetch(`${BASE_URL}/EgazaRequest/GetEgazaCategories`);
+  return res.json();
+}
+export async function getEgazaSubcategories() {
+  const res = await fetch(`${BASE_URL}/EgazaRequest/GetEgazaSubcategories`);
+  return res.json();
+}
+export async function getEgazaSheikh() {
+  const res = await fetch(`${BASE_URL}/EgazaRequest/GetEgazaSheikh`);
+  return res.json();
+}
+
 export async function getNews(newsId?: string, newsTypeId?: string) {
   const res = await fetch(
     `${BASE_URL}/News${newsId ? `/${newsId}` : ""}${

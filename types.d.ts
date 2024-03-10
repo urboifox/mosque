@@ -98,6 +98,22 @@ type MediaType = {
   activeState: boolean;
 };
 
+type EgazaCategories = {
+  id: number;
+  name_En: string;
+  name_Ar: string;
+};
+type EgazaSubcategories = {
+  id: number;
+  name_En: string;
+  name_Ar: string;
+};
+type EgazaSheikh = {
+  id: number;
+  name_En: string;
+  name_Ar: string;
+};
+
 type PrayerTimesResponse = {
   code: number;
   status: string;
