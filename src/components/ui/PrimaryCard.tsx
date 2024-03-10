@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import { cn, formatDate } from "@/utils";
 import selectTranslation from "@/hooks/selectTranslation";
-import { FaPause, FaPauseCircle, FaPlay, FaPlayCircle } from "react-icons/fa";
+import { FaPause, FaPlay } from "react-icons/fa";
 import { useRef, useState } from "react";
 
 export default function PrimaryCard({

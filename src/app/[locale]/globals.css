@@ -32,6 +32,17 @@ html[lang="ar"] .flip-dynamic {
   @apply -scale-x-100;
 }
 
+.rhap_main-controls-button,
+.rhap_repeat-button,
+.rhap_volume-button {
+  @apply !text-hover;
+}
+.rhap_progress-filled,
+.rhap_progress-indicator,
+.rhap_volume-indicator {
+  @apply !bg-hover;
+}
+
 .container {
   @apply mx-auto px-3 md:px-10;
 }

@@ -12,6 +12,8 @@ import {
 } from "react-icons/md";
 import PageSwiper from "../PageSwiper";
 import selectTranslation from "@/hooks/selectTranslation";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 export default function OneItemContent({
   locale,
@@ -113,7 +115,7 @@ export default function OneItemContent({
             </h2>
             {data.path && (
               <div className="mb-5">
-                <audio src={data.path} controls className="w-full"></audio>
+                <AudioPlayer autoPlay src={data.path} className="w-full" />
               </div>
             )}
             <div
