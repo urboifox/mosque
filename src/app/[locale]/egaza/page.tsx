@@ -21,9 +21,9 @@ export default async function EgazaPage({
 
   const [settings, egazaCategories, egazaSubcategories, egazaSheikh]: [
     SettingsResponse,
-    EgazaCategories,
-    EgazaSubcategories,
-    EgazaSheikh
+    EgazaCategories[],
+    EgazaSubcategories[],
+    EgazaSheikh[]
   ] = await Promise.all([
     settingsPromise,
     egazaCategoriesPromise,
