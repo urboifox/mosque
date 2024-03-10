@@ -37,6 +37,7 @@ export default function EgazaForm({
     Email: "",
     City: "",
     Phone1: "",
+    Phone2: "",
     Notes: "",
   });
 
@@ -101,7 +102,7 @@ export default function EgazaForm({
               {errors.Email && (
                 <small className="text-red-500">{errors.Email}</small>
               )}
-              <input type="number" name="Age" placeholder={t("age")} />
+              <input type="text" name="Age" placeholder={t("age")} />
               {errors.Age && (
                 <small className="text-red-500">{errors.Age}</small>
               )}
@@ -109,9 +110,23 @@ export default function EgazaForm({
               {errors.City && (
                 <small className="text-red-500">{errors.City}</small>
               )}
-              <input type="number" name="phone" placeholder={t("phone")} />
+              <input
+                type="text"
+                name="Phone1"
+                placeholder={t("phone") + " 1"}
+              />
               {errors.Phone1 && (
                 <small className="text-red-500">{errors.Phone1}</small>
+              )}
+              <div className="optional">
+                <input
+                  type="number"
+                  name="Phone2"
+                  placeholder={t("phone") + " 2"}
+                />
+              </div>
+              {errors.Phone2 && (
+                <small className="text-red-500">{errors.Phone2}</small>
               )}
               <textarea name="Notes" placeholder={t("notes")}></textarea>
               {errors.Notes && (

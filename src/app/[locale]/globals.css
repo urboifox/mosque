@@ -56,8 +56,20 @@ input:focus {
 }
 input,
 textarea {
-  @apply bg-light-100 my-1 rounded-md w-full py-3 px-6;
+  @apply relative bg-light-100 my-1 rounded-md w-full py-3 px-6;
 }
+
+.optional {
+  position: relative;
+}
+.optional::after {
+  content: "optional";
+  @apply z-20 absolute end-4 text-xs text-foreground/40 font-medium uppercase top-5;
+}
+html[lang="ar"] .optional::after {
+  content: "اختياري";
+}
+
 small {
   @apply -mt-2;
 }
