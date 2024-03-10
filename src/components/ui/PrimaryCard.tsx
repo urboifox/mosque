@@ -45,7 +45,7 @@ export default function PrimaryCard({
               {data.author || series || "Admin"}
             </span>
           </p>
-          <div className="flex items-center justify-between">
+          <div className="flex justify-between">
             <div>
               <h2 className="font-cinzel font-bold text-lg md:text-xl capitalize text-foreground">
                 {title}
@@ -63,7 +63,7 @@ export default function PrimaryCard({
                     isPlaying ? audio.current?.pause() : audio.current?.play()
                   }
                 >
-                  {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+                  {isPlaying ? <FaPause size={15} /> : <FaPlay size={15} />}
                 </button>
                 <audio
                   ref={audio}
