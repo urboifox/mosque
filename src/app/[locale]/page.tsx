@@ -6,12 +6,14 @@ import NewsSection from "@/components/NewsSection";
 import PrayerTimes from "@/components/PrayerTimes";
 import SupportYourMasjid from "@/components/SupportYourMasjid";
 import { getArticles, getAudio, getBook, getSettings } from "@/utils";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export default async function Home({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   const settingsPromise = getSettings();
   const articlesPromise = getArticles();
   const booksPromise = getBook();

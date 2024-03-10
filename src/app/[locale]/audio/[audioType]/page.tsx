@@ -1,30 +1,31 @@
 import PrimaryCard from "@/components/ui/PrimaryCard";
-import { getNews, getNewsTypes } from "@/utils";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { getAudio, getMediaTypes } from "@/utils";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default async function NewsWithTypes({
-  params: { newsType, locale },
+export default async function AudioTypePage({
+  params: { audioType, locale },
 }: {
-  params: { newsType: string; locale: string };
+  params: { audioType: string; locale: string };
 }) {
-  // fetch news types and filter them by the param
   unstable_setRequestLocale(locale);
-  const newsTypes = await getNewsTypes();
-  const currentType = newsTypes.filter(
+  const mediaTypes = await getMediaTypes();
+  const currentType = mediaTypes.filter(
     (n: any) =>
-      n.name_En.toLowerCase() === newsType.split("%20").join(" ").toLowerCase()
+      n.name_En.toLowerCase() === audioType.split("%20").join(" ").toLowerCase()
   );
-
   const currentTypeId = currentType[0].id;
-
-  const news = await getNews(undefined, currentTypeId);
+  const audios = await getAudio(undefined, currentTypeId);
 
   return (
     <section className="section">
       <div className="container">
-        {news.length > 0 ? (
+        <SectionHeader
+          title={currentType[0][locale === "en" ? "name_En" : "name_Ar"]}
+        />
+        {audios.length > 0 ? (
           <div className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            {news.map((d: any) => {
+            {audios.map((d: any) => {
               return (
                 <PrimaryCard
                   href={`${currentType[0].name_En?.toLowerCase()}/${d.id}`}
@@ -48,6 +49,6 @@ export default async function NewsWithTypes({
 }
 
 export async function generateStaticParams() {
-  const newsTypes = await getNewsTypes();
-  return newsTypes.map((n: any) => ({ newsType: n.name_En }));
+  const mediaTypes = await getMediaTypes();
+  return mediaTypes.map((n: any) => ({ audioType: n.name_En }));
 }

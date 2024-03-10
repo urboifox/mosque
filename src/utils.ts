@@ -19,8 +19,12 @@ export async function getBook(bookId?: string) {
   const res = await fetch(`${BASE_URL}/Book${bookId ? `/${bookId}` : ""}`);
   return res.json();
 }
-export async function getAudio(audioId?: string) {
-  const res = await fetch(`${BASE_URL}/Audio${audioId ? `/${audioId}` : ""}`);
+export async function getAudio(audioId?: string, mediaTypeId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/Audio${audioId ? `/${audioId}` : ""}${
+      mediaTypeId ? `?MediaTypeId=${mediaTypeId}` : ""
+    }`
+  );
   return res.json();
 }
 // export async function getVisual(visualId?: string) {
@@ -52,6 +56,11 @@ export async function getNews(newsId?: string, newsTypeId?: string) {
 
 export async function getNewsTypes() {
   const res = await fetch(`${BASE_URL}/NewsType`);
+  return res.json();
+}
+
+export async function getMediaTypes() {
+  const res = await fetch(`${BASE_URL}/MediaType`);
   return res.json();
 }
 

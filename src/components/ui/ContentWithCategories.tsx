@@ -32,6 +32,7 @@ export default async function ContentWithCategories({
                 {category.typeData.map((d: any) => {
                   return (
                     <PrimaryCard
+                      className="max-w-xl"
                       href={`/${category.endpoint.toLowerCase()}/${category.type.name_En?.toLowerCase()}/${
                         d.id
                       }`}

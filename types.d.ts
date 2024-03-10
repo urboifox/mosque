@@ -91,6 +91,13 @@ type NewsTypesResponse = {
   activeState: boolean;
 };
 
+type MediaType = {
+  id: number;
+  name_En: string;
+  name_Ar: string;
+  activeState: boolean;
+};
+
 type PrayerTimesResponse = {
   code: number;
   status: string;

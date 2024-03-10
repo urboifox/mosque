@@ -5,7 +5,13 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["mohammed50500-001-site1.jtempurl.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mohammed50500-001-site1.jtempurl.com",
+        pathname: "**",
+      },
+    ],
   },
 };
 

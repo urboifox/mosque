@@ -19,6 +19,10 @@ export const navLinks = [
     title: "news",
     href: "/news",
   },
+  {
+    title: "audio",
+    href: "/audio",
+  },
 ];
 
 export const subNavLinks = [

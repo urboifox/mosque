@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { NextIntlClientProvider } from "next-intl";
 import Footer from "@/components/Footer";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { LOCALES } from "@/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +37,7 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const messages = (await import(`@/../messages/${locale}.json`)).default;
-
+  unstable_setRequestLocale(locale);
   return (
     <html lang={locale}>
       <body
@@ -49,4 +51,8 @@ export default async function RootLayout({
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
 }

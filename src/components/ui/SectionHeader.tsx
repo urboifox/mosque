@@ -4,7 +4,7 @@ export default function SectionHeader({
   name,
   title,
 }: {
-  name: string;
+  name?: string;
   title: string;
 }) {
   const t = useTranslations();

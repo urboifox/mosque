@@ -1,30 +1,30 @@
 import PageSwiper from "@/components/PageSwiper";
-import { getContentWithCategories, getNewsTypes, getSettings } from "@/utils";
+import { getContentWithCategories, getMediaTypes, getSettings } from "@/utils";
 import ContentWithCategories from "@/components/ui/ContentWithCategories";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default async function NewsPage({
+export default async function AudiosPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
   const settingsPromise = getSettings();
-  const newsTypesPromise = getNewsTypes();
+  const mediaTypesPromise = getMediaTypes();
 
-  const [settings, newsTypes]: [SettingsResponse, NewsTypesResponse[]] =
-    await Promise.all([settingsPromise, newsTypesPromise]);
+  const [settings, mediaTypes]: [SettingsResponse, MediaType[]] =
+    await Promise.all([settingsPromise, mediaTypesPromise]);
 
   const content = await getContentWithCategories(
-    newsTypes,
-    "News",
-    "NewsTypeId",
+    mediaTypes,
+    "Audio",
+    "MediaTypeId",
     locale
   );
 
   return (
     <div>
-      <PageSwiper media={settings.newsBanner} heading="news" />
+      <PageSwiper media={settings.audiosBanner} heading="audios" />
       <ContentWithCategories locale={locale} content={content} />
     </div>
   );

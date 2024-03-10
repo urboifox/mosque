@@ -1,12 +1,14 @@
 import PageSwiper from "@/components/PageSwiper";
 import { getFatwa, getSettings } from "@/utils";
 import Fatwas from "./components/Fatwas";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export default async function page({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   const fatwasData = getFatwa();
   const settingsData = getSettings();
 
