@@ -14,6 +14,8 @@ import PageSwiper from "../PageSwiper";
 import selectTranslation from "@/hooks/selectTranslation";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import { Link } from "@/navigation";
+import { FaBook } from "react-icons/fa6";
 
 export default function OneItemContent({
   locale,
@@ -26,10 +28,8 @@ export default function OneItemContent({
   addViewLink?: string;
   path?: string;
 }) {
-  const { title, contents, answer, series, description } = selectTranslation(
-    locale,
-    data
-  );
+  const { title, contents, answer, series, description, mediaType } =
+    selectTranslation(locale, data);
   const t = useTranslations();
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function OneItemContent({
             />
           </div>
           <div className="py-3 flex text-sm items-center gap-5 border-b text-dimmed uppercase border-light-200">
-            {data.path ? (
+            {mediaType ? (
               <div className="flex items-center gap-1">
                 <MdPerson size={20} />
                 <div>
@@ -108,12 +108,26 @@ export default function OneItemContent({
                 </div>
               </div>
             )}
+            {!mediaType && data.path && (
+              <div className="flex items-center gap-1">
+                <FaBook size={17} />
+                <div>
+                  <Link
+                    href={data.path}
+                    className="text-foreground"
+                    target="_blank"
+                  >
+                    {t("read")}
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
           <div>
             <h2 className="font-cinzel font-bold text-xl my-5 flex flex-col gap-5 text-dark-100">
               {title}
             </h2>
-            {data.path && (
+            {mediaType && (
               <div className="mb-5">
                 <AudioPlayer autoPlay src={data.path} className="w-full" />
               </div>

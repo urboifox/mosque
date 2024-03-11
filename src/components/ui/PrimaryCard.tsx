@@ -6,6 +6,7 @@ import { cn, formatDate } from "@/utils";
 import selectTranslation from "@/hooks/selectTranslation";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { useRef, useState } from "react";
+import { FaBook } from "react-icons/fa6";
 
 export default function PrimaryCard({
   data,
@@ -21,7 +22,10 @@ export default function PrimaryCard({
   const t = useTranslations();
   const [isPlaying, playing] = useState(false);
   const audio = useRef<HTMLAudioElement>(null);
-  const { title, description, series } = selectTranslation(locale, data);
+  const { title, description, series, mediaType } = selectTranslation(
+    locale,
+    data
+  );
 
   return (
     <article className="max-w-[600px] flex flex-col h-full w-full gap-2 justify-between">
@@ -56,7 +60,12 @@ export default function PrimaryCard({
                   : description || "Some description for the card"}
               </p>
             </div>
-            {data.path && (
+            {!mediaType && data.path && (
+              <Link href={data.path}>
+                <FaBook size={15} />
+              </Link>
+            )}
+            {mediaType && (
               <div>
                 <button
                   onClick={() =>
