@@ -13,3 +13,15 @@ export async function requestEgaza(formData: FormData) {
   console.log(response);
   return response;
 }
+
+export async function requestFood(formData: FormData) {
+  console.log(formData);
+  const res = await fetch(`${BASE_URL}/FoodNeed`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const response = await res.json();
+  console.log(response);
+  return response;
+}

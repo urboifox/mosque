@@ -27,6 +27,10 @@ export const navLinks = [
     title: "egaza",
     href: "/egaza",
   },
+  {
+    title: "food parcle",
+    href: "/food-parcle",
+  },
 ];
 
 export const subNavLinks = [
