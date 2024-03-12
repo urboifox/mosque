@@ -32,7 +32,7 @@ export default function NavMenu() {
               <IoClose size={25} color="white" />
             </button>
             <div className="h-[85%]">
-              {navLinks.map((link, i) => {
+              {allLinks.map((link, i) => {
                 return (
                   <Link
                     onClick={() => setOpen(false)}

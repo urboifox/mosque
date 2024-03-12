@@ -16,20 +16,8 @@ export const navLinks = [
     href: "/about",
   },
   {
-    title: "news",
-    href: "/news",
-  },
-  {
-    title: "audio",
-    href: "/audio",
-  },
-  {
-    title: "egaza",
-    href: "/egaza",
-  },
-  {
-    title: "food parcle",
-    href: "/food-parcle",
+    title: "live streams",
+    href: "/live-streams",
   },
 ];
 
@@ -43,28 +31,12 @@ export const subNavLinks = [
     href: "/pray-with-me",
   },
   {
-    title: "al furqan school",
-    href: "/furqan-school",
+    title: "egaza",
+    href: "/egaza",
   },
   {
-    title: "new muslims",
-    href: "/new-muslims",
-  },
-  {
-    title: "women",
-    href: "/women",
-  },
-  {
-    title: "kids",
-    href: "/kids",
-  },
-  {
-    title: "visuals",
-    href: "/visuals",
-  },
-  {
-    title: "audios",
-    href: "/audios",
+    title: "audio",
+    href: "/audio",
   },
   {
     title: "books",
@@ -73,13 +45,5 @@ export const subNavLinks = [
   {
     title: "news",
     href: "/news",
-  },
-  {
-    title: "private files",
-    href: "/private-files",
-  },
-  {
-    title: "dawa projects",
-    href: "/dawa-projects",
   },
 ];

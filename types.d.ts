@@ -113,22 +113,36 @@ type EgazaSheikh = {
   name_En: string;
   name_Ar: string;
 };
+
+type LiveStreamResponse = {
+  id: number;
+  title_En: string;
+  title_Ar: string;
+  time: string;
+  description_En: string;
+  description_Ar: string;
+  bannerUrl: string;
+  youtubeUrl: string;
+  facebookUrl: string;
+  activeState: boolean;
+};
+
 type BooksResponse = {
-  "id": number,
-  "title_En": string,
-  "title_Ar": string,
-  "description_En": string,
-  "description_Ar": string,
-  "path": string,
-  "bannerUrl": string,
-  "author": string,
-  "size": string,
-  "activeState": boolean,
-  "views": number,
-  "topList": boolean,
-  "bookFile": string,
-  "banner": string
-}
+  id: number;
+  title_En: string;
+  title_Ar: string;
+  description_En: string;
+  description_Ar: string;
+  path: string;
+  bannerUrl: string;
+  author: string;
+  size: string;
+  activeState: boolean;
+  views: number;
+  topList: boolean;
+  bookFile: string;
+  banner: string;
+};
 
 type PrayerTimesResponse = {
   code: number;

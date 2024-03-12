@@ -61,7 +61,7 @@ export default function PrimaryCard({
               </p>
             </div>
             {!mediaType && data.path && (
-              <Link href={data.path}>
+              <Link href={data.path} target="_blank">
                 <FaBook size={15} />
               </Link>
             )}

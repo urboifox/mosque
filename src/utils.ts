@@ -76,6 +76,13 @@ export async function getNews(newsId?: string, newsTypeId?: string) {
   return res.json();
 }
 
+export async function getLiveStream(liveStreamId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/LiveStream${liveStreamId ? `/${liveStreamId}` : ""}`
+  );
+  return res.json();
+}
+
 export async function getNewsTypes() {
   const res = await fetch(`${BASE_URL}/NewsType`);
   return res.json();
