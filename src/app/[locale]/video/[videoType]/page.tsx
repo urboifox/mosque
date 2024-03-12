@@ -1,21 +1,21 @@
 import PrimaryCard from "@/components/ui/PrimaryCard";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { getAudio, getMediaTypes } from "@/utils";
+import { getMediaTypes, getVideo } from "@/utils";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default async function AudioTypePage({
-  params: { audioType, locale },
+export default async function VideoTypePage({
+  params: { videoType, locale },
 }: {
-  params: { audioType: string; locale: string };
+  params: { videoType: string; locale: string };
 }) {
   unstable_setRequestLocale(locale);
   const mediaTypes = await getMediaTypes();
   const currentType = mediaTypes.filter(
     (n: any) =>
-      n.name_En.toLowerCase() === audioType.split("%20").join(" ").toLowerCase()
+      n.name_En.toLowerCase() === videoType.split("%20").join(" ").toLowerCase()
   );
   const currentTypeId = currentType[0].id;
-  const audios = await getAudio(undefined, currentTypeId);
+  const videos = await getVideo(undefined, currentTypeId);
 
   return (
     <section className="section">
@@ -23,9 +23,9 @@ export default async function AudioTypePage({
         <SectionHeader
           title={currentType[0][locale === "en" ? "name_En" : "name_Ar"]}
         />
-        {audios.length > 0 ? (
+        {videos.length > 0 ? (
           <div className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            {audios.map((d: any) => {
+            {videos.map((d: any) => {
               return (
                 <PrimaryCard
                   href={`${currentType[0].name_En?.toLowerCase()}/${d.id}`}
@@ -39,7 +39,7 @@ export default async function AudioTypePage({
         ) : (
           <>
             <div className="text-center text-2xl md:text-4xl font-bold py-40 font-cinzel">
-              There are no audios in this category
+              There are no videos in this category
             </div>
           </>
         )}
@@ -50,5 +50,5 @@ export default async function AudioTypePage({
 
 export async function generateStaticParams() {
   const mediaTypes = await getMediaTypes();
-  return mediaTypes.map((n: any) => ({ audioType: n.name_En }));
+  return mediaTypes.map((n: any) => ({ videoType: n.name_En }));
 }

@@ -24,7 +24,7 @@ export default function MultipleCategoriesSection({
               <PrimaryCard
                 data={e}
                 key={i}
-                href={`${data[activeIndex].name}/${e.id}`}
+                href={`${data[activeIndex].name}`}
               />
             );
           })}

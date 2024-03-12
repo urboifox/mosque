@@ -64,27 +64,35 @@ export default function OneItemContent({
           </div>
           <div className="py-3 flex text-sm items-center gap-5 border-b text-dimmed uppercase border-light-200">
             {mediaType ? (
-              <div className="flex items-center gap-1">
-                <MdPerson size={20} />
-                <div>
-                  <p>
-                    {t("by")}
-                    {": "}
-                    {series || "El menshawy"}
-                  </p>
-                </div>
-              </div>
+              <>
+                {series && (
+                  <div className="flex items-center gap-1">
+                    <MdPerson size={20} />
+                    <div>
+                      <p>
+                        {t("by")}
+                        {": "}
+                        {series}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </>
             ) : (
-              <div className="flex items-center gap-1">
-                <CiEdit size={20} />
-                <div>
-                  <p>
-                    {t("by")}
-                    {": "}
-                    {data.author || "Admin"}
-                  </p>
-                </div>
-              </div>
+              <>
+                {data.author && (
+                  <div className="flex items-center gap-1">
+                    <CiEdit size={20} />
+                    <div>
+                      <p>
+                        {t("by")}
+                        {": "}
+                        {data.author}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </>
             )}
             <div className="flex items-center gap-1">
               <MdOutlineRemoveRedEye size={17} />
@@ -129,7 +137,11 @@ export default function OneItemContent({
             </h2>
             {mediaType && (
               <div className="mb-5">
-                <AudioPlayer autoPlay src={data.path} className="w-full" />
+                {data.path.endsWith(".mp3") ? (
+                  <AudioPlayer autoPlay src={data.path} className="w-full" />
+                ) : (
+                  <video src={data.path} controls></video>
+                )}
               </div>
             )}
             <div

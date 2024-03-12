@@ -5,7 +5,7 @@ import MultipleCategoriesSection from "@/components/MultipleCategoriesSection/in
 import NewsSection from "@/components/NewsSection";
 import PrayerTimes from "@/components/PrayerTimes";
 import SupportYourMasjid from "@/components/SupportYourMasjid";
-import { getArticles, getAudio, getBook, getSettings } from "@/utils";
+import { getArticles, getAudio, getBook, getSettings, getVideo } from "@/utils";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 export default async function Home({
@@ -18,15 +18,17 @@ export default async function Home({
   const articlesPromise = getArticles();
   const booksPromise = getBook();
   const audiosPromise = getAudio();
+  const videosPromise = getVideo();
   // const visualsPromise = getVisuals();
   // const invitationCardsPromise = getInvitationCards();
 
   // fetch data in parallel instead of overflow methods
-  const [settings, articles, books, audios] = await Promise.all([
+  const [settings, articles, books, audios, videos] = await Promise.all([
     settingsPromise,
     articlesPromise,
     booksPromise,
     audiosPromise,
+    videosPromise,
   ]);
 
   return (
@@ -39,7 +41,8 @@ export default async function Home({
         data={[
           { data: articles, name: "articles" },
           { data: books, name: "books" },
-          { data: audios, name: "audios" },
+          { data: audios, name: "audio" },
+          { data: videos, name: "videos" },
         ]}
       />
       <LatestFatwas locale={locale} />

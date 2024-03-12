@@ -58,6 +58,15 @@ export async function getEgazaSheikh() {
   return res.json();
 }
 
+export async function getVideo(videoId?: string, mediaTypeId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/Video${videoId ? `/${videoId}` : ""}${
+      mediaTypeId ? `?MediaTypeId=${mediaTypeId}` : ""
+    }`
+  );
+  return res.json();
+}
+
 export async function getNews(newsId?: string, newsTypeId?: string) {
   const res = await fetch(
     `${BASE_URL}/News${newsId ? `/${newsId}` : ""}${
