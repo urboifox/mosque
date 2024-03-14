@@ -127,6 +127,81 @@ type LiveStreamResponse = {
   activeState: boolean;
 };
 
+type PrivateFileResponse = {
+  id: number;
+  title_En: string;
+  title_Ar: string;
+  description_En: string;
+  description_Ar: string;
+  lock: boolean;
+  activeState: boolean;
+  orderIndex: number;
+  topList: boolean;
+  bannerUrl1: string;
+  bannerUrl2: string;
+  bannerUrl3: string;
+  bannerUrl4: string;
+  bannerUrl5: string;
+  bannerUrl6: string;
+  bannerUrl7: string;
+  bannerUrl8: string;
+  bannerUrl9: string;
+  mainBanner: string;
+  bannerGo_1: string;
+  bannerGo_2: string;
+  bannerGo_3: string;
+  bannerGo_4: string;
+  bannerGo_5: string;
+  bannerGo_6: string;
+  bannerGo_7: string;
+  bannerGo_8: string;
+  bannerGo_9: string;
+};
+
+type EventResponse = {
+  id: number;
+  title_En: string;
+  title_Ar: string;
+  description_En: string;
+  description_Ar: string;
+  eventStartDate: string;
+  eventEndDate: string;
+  lock: boolean;
+  activeState: boolean;
+  orderIndex: number;
+  topList: boolean;
+  bannerUrl: string;
+  eventAudios: {
+    id: number;
+    title_En: string;
+    title_Ar: string;
+    description_En: string;
+    description_Ar: string;
+    path: string;
+  }[];
+  eventVideos: {
+    id: number;
+    title_En: string;
+    title_Ar: string;
+    description_En: string;
+    description_Ar: string;
+    path: string;
+  }[];
+  eventPhotos: {
+    id: number;
+    title_En: string;
+    title_Ar: string;
+    path: string;
+    eventId: number;
+    event_En: string;
+    event_Ar: string;
+    activeState: boolean;
+    topList: boolean;
+    fromEvent: boolean;
+  }[];
+  banner: string;
+};
+
 type BooksResponse = {
   id: number;
   title_En: string;

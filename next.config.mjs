@@ -9,9 +9,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "mohammed50500-001-site1.jtempurl.com",
-        pathname: "**",
+        port: "",
+        pathname: "/**",
       },
     ],
+    domains: ["mohammed50500-001-site1.jtempurl.com"],
   },
 };
 

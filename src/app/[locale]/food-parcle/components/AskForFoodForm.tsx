@@ -40,17 +40,17 @@ export default function AskForFoodForm() {
               <h2 className="text-center mb-10 text-3xl capitalize font-bold font-cinzel">
                 {t("askForFood")}
               </h2>
-              <input required type="text" name="Name" placeholder={t("name")} />
+              <input required type="text" name="name" placeholder={t("name")} />
               {errors.Name && (
                 <small className="text-red-500">{errors.Name}</small>
               )}
-              <input type="text" name="Address" placeholder={t("address")} />
+              <input type="text" name="address" placeholder={t("address")} />
               {errors.Address && (
                 <small className="text-red-500">{errors.Address}</small>
               )}
               <input
                 type="text"
-                name="Phone1"
+                name="phone1"
                 required
                 placeholder={t("phone") + " 1"}
               />
@@ -60,14 +60,14 @@ export default function AskForFoodForm() {
               <div className="optional">
                 <input
                   type="number"
-                  name="Phone2"
+                  name="phone2"
                   placeholder={t("phone") + " 2"}
                 />
               </div>
               {errors.Phone2 && (
                 <small className="text-red-500">{errors.Phone2}</small>
               )}
-              <textarea name="Notes" placeholder={t("notes")}></textarea>
+              <textarea name="notes" placeholder={t("notes")}></textarea>
               {errors.Notes && (
                 <small className="text-red-500">{errors.Notes}</small>
               )}

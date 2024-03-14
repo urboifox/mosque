@@ -18,7 +18,7 @@ export default function NavCTA() {
       >
         {t("lang")}
       </Link>
-      <Link href={`${currentLang}/donate`}>
+      <Link href={`/donate`}>
         <MainButton className="capitalize px-6 py-[.4rem]">
           {t("donateNow")}
         </MainButton>

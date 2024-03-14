@@ -19,9 +19,17 @@ export const navLinks = [
     title: "live streams",
     href: "/live-streams",
   },
+  {
+    title: "events",
+    href: "/events",
+  },
 ];
 
 export const subNavLinks = [
+  {
+    title: "private files",
+    href: "/private-files",
+  },
   {
     title: "food parcle",
     href: "/food-parcle",

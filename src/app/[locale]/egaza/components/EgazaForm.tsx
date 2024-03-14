@@ -94,25 +94,25 @@ export default function EgazaForm({
               <h2 className="text-center text-3xl capitalize font-bold font-cinzel">
                 {t("yourInformation")}
               </h2>
-              <input type="text" name="Name" placeholder={t("name")} />
+              <input type="text" name="name" placeholder={t("name")} />
               {errors.Name && (
                 <small className="text-red-500">{errors.Name}</small>
               )}
-              <input type="email" name="Email" placeholder={t("email")} />
+              <input type="email" name="email" placeholder={t("email")} />
               {errors.Email && (
                 <small className="text-red-500">{errors.Email}</small>
               )}
-              <input type="text" name="Age" placeholder={t("age")} />
+              <input type="text" name="age" placeholder={t("age")} />
               {errors.Age && (
                 <small className="text-red-500">{errors.Age}</small>
               )}
-              <input type="text" name="City" placeholder={t("city")} />
+              <input type="text" name="city" placeholder={t("city")} />
               {errors.City && (
                 <small className="text-red-500">{errors.City}</small>
               )}
               <input
                 type="text"
-                name="Phone1"
+                name="phone1"
                 placeholder={t("phone") + " 1"}
               />
               {errors.Phone1 && (
@@ -121,14 +121,14 @@ export default function EgazaForm({
               <div className="optional">
                 <input
                   type="number"
-                  name="Phone2"
+                  name="phone2"
                   placeholder={t("phone") + " 2"}
                 />
               </div>
               {errors.Phone2 && (
                 <small className="text-red-500">{errors.Phone2}</small>
               )}
-              <textarea name="Notes" placeholder={t("notes")}></textarea>
+              <textarea name="notes" placeholder={t("notes")}></textarea>
               {errors.Notes && (
                 <small className="text-red-500">{errors.Notes}</small>
               )}

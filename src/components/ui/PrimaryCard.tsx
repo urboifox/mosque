@@ -43,11 +43,14 @@ export default function PrimaryCard({
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-sm flex [&>span]:pr-6 cursor-pointer text-gray text-xl">
-            <span>{data.createdDate ? formatDate(data.createdDate) : ""}</span>
-            <span className="relative before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2  before:rounded-full before:w-[5px] before:h-[5px] before:bg-gray">
-              {data.author || series || "Admin"}
-            </span>
+          <p className="flex [&>span]:pr-6 cursor-pointer text-gray">
+            <span>{data?.createdDate ? formatDate(data.createdDate) : ""}</span>
+            {data?.author ||
+              (series && (
+                <span className="relative before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2  before:rounded-full before:w-[5px] before:h-[5px] before:bg-gray">
+                  {data.author || series}
+                </span>
+              ))}
           </p>
           <div className="flex justify-between">
             <div>
@@ -60,29 +63,41 @@ export default function PrimaryCard({
                   : description || "Some description for the card"}
               </p>
             </div>
-            {!mediaType && data.path && (
+            {!mediaType && data?.path && (
               <Link href={data.path} target="_blank">
                 <FaBook size={15} />
               </Link>
             )}
             {mediaType && (
-              <div>
-                <button
-                  onClick={() =>
-                    isPlaying ? audio.current?.pause() : audio.current?.play()
-                  }
-                >
-                  {isPlaying ? <FaPause size={15} /> : <FaPlay size={15} />}
-                </button>
-                <audio
-                  ref={audio}
-                  onPlay={() => playing(true)}
-                  onPause={() => playing(false)}
-                  src={data.path}
-                  controls
-                  className="hidden"
-                />
-              </div>
+              <>
+                {data.path.endsWith(".mp3") && (
+                  <>
+                    <div>
+                      <button
+                        onClick={() =>
+                          isPlaying
+                            ? audio.current?.pause()
+                            : audio.current?.play()
+                        }
+                      >
+                        {isPlaying ? (
+                          <FaPause size={15} />
+                        ) : (
+                          <FaPlay size={15} />
+                        )}
+                      </button>
+                      <audio
+                        ref={audio}
+                        onPlay={() => playing(true)}
+                        onPause={() => playing(false)}
+                        src={data.path}
+                        controls
+                        className="hidden"
+                      />
+                    </div>
+                  </>
+                )}
+              </>
             )}
           </div>
           <Link
