@@ -43,7 +43,6 @@ export default function OneItemContent({
     })();
   }, [data.id, addViewLink]);
 
-  console.log(data);
   return (
     <>
       <PageSwiper className={"text-3xl"} path={path} heading={title} />

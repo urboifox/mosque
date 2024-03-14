@@ -39,14 +39,55 @@ function Content({
   const date = new Date(Date.parse(event.eventStartDate));
   return (
     <>
-      {!archived ? (
-        <></>
+      {archived ? (
+        <>
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <div className="flex justify-between items-center gap-5">
+                <h2 className="font-cinzel text-3xl font-bold">{title}</h2>
+                <p className="text-hover font-medium text-sm">
+                  {date.toDateString()}
+                </p>
+              </div>
+              <p>{description}</p>
+            </div>
+            {/* <div>
+              {event.eventPhotos.length >= 1 && (
+                <div>
+                  <EventImagesSwiper
+                    contentType="images"
+                    locale={locale}
+                    data={event.eventPhotos}
+                  />
+                </div>
+              )}
+              {event.eventVideos.length >= 1 && (
+                <div>
+                  <EventImagesSwiper
+                    contentType="videos"
+                    locale={locale}
+                    data={event.eventVideos}
+                  />
+                </div>
+              )}
+              {event.eventAudios.length >= 1 && (
+                <div>
+                  <EventImagesSwiper
+                    contentType="audios"
+                    locale={locale}
+                    data={event.eventAudios}
+                  />
+                </div>
+              )}
+            </div> */}
+          </div>
+        </>
       ) : (
         <>
           <div className="flex flex-col gap-3 items-center">
             <h2 className="font-cinzel font-bold text-4xl">{title}</h2>
             <p>{description}</p>
-            <div className="mt-5 text-3xl dir-dynamic text-hover font-bold uppercase">
+            <div className="mt-5 flex items-center gap-5 text-3xl dir-dynamic text-hover font-semibold uppercase">
               <span className="text-foreground">{t("upcomingIn")} </span>
               <span>{date.toDateString()}</span>
             </div>

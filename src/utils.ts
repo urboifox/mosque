@@ -83,6 +83,31 @@ export async function getLiveStream(liveStreamId?: string) {
   return res.json();
 }
 
+export async function getEventAudios(eventId?: string, audioId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/EventAudio${
+      audioId ? `/${audioId}` : ""
+    }${`?EventId=${eventId}`}`
+  );
+  return res.json();
+}
+
+export async function getEventImages(eventId?: string, imageId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/EventPhoto${
+      imageId ? `/${imageId}` : ""
+    }${`?EventId=${eventId}`}`
+  );
+  return res.json();
+}
+export async function getEventVideos(eventId?: string, videoId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/EventVideo${
+      videoId ? `/${videoId}` : ""
+    }${`?EventId=${eventId}`}`
+  );
+  return res.json();
+}
 export async function getNewsTypes() {
   const res = await fetch(`${BASE_URL}/NewsType`);
   return res.json();

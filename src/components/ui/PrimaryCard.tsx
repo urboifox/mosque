@@ -32,11 +32,7 @@ export default function PrimaryCard({
       <div className={cn("flex flex-col gap-4", className)}>
         <div className="overflow-hidden min-w-60 aspect-[4/3] rounded-[40px] group relative">
           <Image
-            src={
-              "/images/card-image.jpg" ||
-              data.bannerUrl ||
-              "/images/card-image.jpg"
-            }
+            src={data.bannerUrl || "/images/card-image.jpg"}
             alt={title}
             className="object-cover group-hover:scale-105 transition-all duration-700 ease-out"
             fill
@@ -60,7 +56,7 @@ export default function PrimaryCard({
               <p className="text-dimmed font-normal">
                 {description?.length > 140
                   ? description?.slice(0, 140) + "..."
-                  : description || "Some description for the card"}
+                  : description}
               </p>
             </div>
             {!mediaType && data?.path && (
@@ -102,7 +98,7 @@ export default function PrimaryCard({
           </div>
           <Link
             href={href}
-            className="pl-12 hover:before:bg-secondary before:transition-colors before:duration-200 flex text-primary relative before:content-[''] before:absolute before:absolute before:bg-primary before:h-[2px] before:rounded-full before:w-10 before:top-1/2 before:-translate-y-1/2 before:left-0 transition-colors duration-200 text-lg hover:text-secondary font-medium"
+            className="pl-12 hover:before:bg-secondary before:transition-colors before:duration-200 flex text-primary relative before:content-[''] before:absolute before:bg-primary before:h-[2px] before:rounded-full before:w-10 before:top-1/2 before:-translate-y-1/2 before:left-0 transition-colors duration-200 text-lg hover:text-secondary font-medium"
           >
             {t("more")}
           </Link>

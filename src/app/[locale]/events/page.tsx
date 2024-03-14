@@ -13,7 +13,6 @@ export default async function EventsPage({
   unstable_setRequestLocale(locale);
   const settings: SettingsResponse = await getSettings();
   const events: EventResponse[] = await getEvents();
-  console.log(events);
 
   const upcomingEvents = events.filter((e) => {
     return Date.parse(e.eventStartDate) > Date.now();
@@ -67,16 +66,20 @@ function Events({ data, locale }: { data: any[]; locale: string }) {
   return (
     <>
       {data.length >= 1 ? (
-        data.map((e, i) => {
-          return (
-            <PrimaryCard
-              key={i}
-              data={e}
-              href={`/events/${e?.id}`}
-              locale={locale}
-            />
-          );
-        })
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-10">
+          {data.map((e, i) => {
+            return (
+              <div key={i}>
+                <PrimaryCard
+                  key={i}
+                  data={e}
+                  href={`/events/${e?.id}`}
+                  locale={locale}
+                />
+              </div>
+            );
+          })}
+        </div>
       ) : (
         <>
           <p>{t("noEvents")}</p>
