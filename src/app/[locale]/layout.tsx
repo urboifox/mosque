@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Footer from "@/components/Footer";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { LOCALES } from "@/constants";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
+          <Toaster />
           {children}
           <Footer />
         </NextIntlClientProvider>

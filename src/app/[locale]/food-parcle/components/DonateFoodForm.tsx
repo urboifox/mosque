@@ -41,11 +41,11 @@ export default function DonateFoodForm() {
             formData.append("meals", JSON.stringify(filteredMeals));
             const res = await requestFood(formData);
 
-            if (res.status === 200) {
+            if (res.status === 400) {
+              setErrors(res.errors);
+            } else {
               toast(t("applicationSent"));
               router.push("/");
-            } else {
-              setErrors(res.errors);
             }
           }}
           className="max-w-2xl mx-auto"

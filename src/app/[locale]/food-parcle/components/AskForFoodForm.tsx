@@ -26,11 +26,11 @@ export default function AskForFoodForm() {
           action={async (formData: FormData) => {
             const res = await requestFood(formData);
 
-            if (res.status === 200) {
-              toast(t("applicationSent"));
-              router.push("/");
-            } else {
+            if (res.status === 400) {
               setErrors(res.errors);
+            } else {
+              toast.success(t("applicationSent"));
+              router.push("/");
             }
           }}
           className="max-w-2xl mx-auto"

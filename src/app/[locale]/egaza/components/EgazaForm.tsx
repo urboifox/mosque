@@ -36,6 +36,7 @@ export default function EgazaForm({
     Name: "",
     Email: "",
     City: "",
+    Gender: "",
     Phone1: "",
     Phone2: "",
     Notes: "",
@@ -48,11 +49,11 @@ export default function EgazaForm({
           action={async (formData: FormData) => {
             const res = await requestEgaza(formData);
 
-            if (res.status === 200) {
-              toast(t("applicationSent"));
-              router.push("/");
-            } else {
+            if (res.status === 400) {
               setErrors(res.errors);
+            } else {
+              toast.success(t("applicationSent"));
+              router.push("/");
             }
           }}
           className="max-w-2xl mx-auto"
@@ -65,17 +66,19 @@ export default function EgazaForm({
               <Select
                 placeholder={t("category")}
                 isSearchable
-                name="Id"
+                name="id"
                 options={categoriesOptions}
               />
-              {errors.Id && <small className="text-red-500">{errors.Id}</small>}
+              {errors?.Id && (
+                <small className="text-red-500">{errors.Id}</small>
+              )}
               <Select
                 placeholder={t("subcategory")}
                 isSearchable
-                name="EgazaSubcategoryId"
+                name="egazaSubcategoryId"
                 options={subcategoriesOptions}
               />
-              {errors.EgazaSubcategoryId && (
+              {errors?.EgazaSubcategoryId && (
                 <small className="text-red-500">
                   {errors.EgazaSubcategoryId}
                 </small>
@@ -83,10 +86,10 @@ export default function EgazaForm({
               <Select
                 placeholder={t("sheikh")}
                 isSearchable
-                name="EgazaSheikhId"
+                name="egazaSheikhId"
                 options={sheikhOptions}
               />
-              {errors.EgazaSheikhId && (
+              {errors?.EgazaSheikhId && (
                 <small className="text-red-500">{errors.EgazaSheikhId}</small>
               )}
             </div>
@@ -95,19 +98,19 @@ export default function EgazaForm({
                 {t("yourInformation")}
               </h2>
               <input type="text" name="name" placeholder={t("name")} />
-              {errors.Name && (
+              {errors?.Name && (
                 <small className="text-red-500">{errors.Name}</small>
               )}
               <input type="email" name="email" placeholder={t("email")} />
-              {errors.Email && (
+              {errors?.Email && (
                 <small className="text-red-500">{errors.Email}</small>
               )}
               <input type="text" name="age" placeholder={t("age")} />
-              {errors.Age && (
+              {errors?.Age && (
                 <small className="text-red-500">{errors.Age}</small>
               )}
               <input type="text" name="city" placeholder={t("city")} />
-              {errors.City && (
+              {errors?.City && (
                 <small className="text-red-500">{errors.City}</small>
               )}
               <input
@@ -115,7 +118,7 @@ export default function EgazaForm({
                 name="phone1"
                 placeholder={t("phone") + " 1"}
               />
-              {errors.Phone1 && (
+              {errors?.Phone1 && (
                 <small className="text-red-500">{errors.Phone1}</small>
               )}
               <div className="optional">
@@ -125,11 +128,24 @@ export default function EgazaForm({
                   placeholder={t("phone") + " 2"}
                 />
               </div>
-              {errors.Phone2 && (
+              {errors?.Phone2 && (
                 <small className="text-red-500">{errors.Phone2}</small>
               )}
+              <select
+                className="bg-light-100 rounded-xl w-full px-4 py-4"
+                name="gender"
+              >
+                <option value="other" selected disabled className="text-gray">
+                  {t("gender")}
+                </option>
+                <option value="male">{t("male")}</option>
+                <option value="female">{t("female")}</option>
+              </select>
+              {errors?.Gender && (
+                <small className="text-red-500">{errors.Gender}</small>
+              )}
               <textarea name="notes" placeholder={t("notes")}></textarea>
-              {errors.Notes && (
+              {errors?.Notes && (
                 <small className="text-red-500">{errors.Notes}</small>
               )}
             </div>
