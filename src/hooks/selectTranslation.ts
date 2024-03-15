@@ -34,9 +34,13 @@ export default function selectTranslation(locale: string = "en", data: any) {
   const thread = en
     ? data?.thread_En || data?.thread_Ar
     : data?.thread_Ar || data?.thread_En;
+  const event = en
+    ? data?.event_En || data?.event_Ar
+    : data?.event_Ar || data?.evnent_En;
 
   return {
     title,
+    event,
     name,
     description,
     question,

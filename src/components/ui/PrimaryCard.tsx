@@ -6,7 +6,7 @@ import { cn, formatDate } from "@/utils";
 import selectTranslation from "@/hooks/selectTranslation";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { useRef, useState } from "react";
-import { FaBook } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa6";
 
 export default function PrimaryCard({
   data,
@@ -32,7 +32,7 @@ export default function PrimaryCard({
       <div className={cn("flex flex-col gap-4", className)}>
         <div className="overflow-hidden min-w-60 aspect-[4/3] rounded-[40px] group relative">
           <Image
-            src={data.bannerUrl || "/images/card-image.jpg"}
+            src={data.bannerUrl || data.path || "/images/card-image.jpg"}
             alt={title}
             className="object-cover group-hover:scale-105 transition-all duration-700 ease-out"
             fill
@@ -61,7 +61,7 @@ export default function PrimaryCard({
             </div>
             {!mediaType && data?.path && (
               <Link href={data.path} target="_blank">
-                <FaBook size={15} />
+                <FaEye size={15} />
               </Link>
             )}
             {mediaType && (

@@ -1,5 +1,5 @@
 import PageSwiper from "@/components/PageSwiper";
-import PrimaryCard from "@/components/ui/PrimaryCard";
+import AudioCard from "@/components/ui/AudioCard";
 import { getEventAudios } from "@/utils";
 import { unstable_setRequestLocale } from "next-intl/server";
 
@@ -18,7 +18,7 @@ export default async function EventAudiosPage({
           <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-10">
             {eventAudios.map((e, i) => {
               return (
-                <PrimaryCard
+                <AudioCard
                   key={i}
                   data={e}
                   locale={locale}

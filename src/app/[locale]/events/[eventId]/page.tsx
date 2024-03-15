@@ -3,6 +3,7 @@ import selectTranslation from "@/hooks/selectTranslation";
 import { unstable_setRequestLocale } from "next-intl/server";
 import getEvents from "../getEvents";
 import { useTranslations } from "next-intl";
+import EventImagesSwiper from "./components/EventImagesSwiper";
 
 export default async function EventPage({
   params: { locale, eventId },
@@ -51,10 +52,11 @@ function Content({
               </div>
               <p>{description}</p>
             </div>
-            {/* <div>
+            <div className="flex flex-col gap-20">
               {event.eventPhotos.length >= 1 && (
                 <div>
                   <EventImagesSwiper
+                    eventId={event.id}
                     contentType="images"
                     locale={locale}
                     data={event.eventPhotos}
@@ -66,6 +68,7 @@ function Content({
                   <EventImagesSwiper
                     contentType="videos"
                     locale={locale}
+                    eventId={event.id}
                     data={event.eventVideos}
                   />
                 </div>
@@ -73,13 +76,14 @@ function Content({
               {event.eventAudios.length >= 1 && (
                 <div>
                   <EventImagesSwiper
+                    eventId={event.id}
                     contentType="audios"
                     locale={locale}
                     data={event.eventAudios}
                   />
                 </div>
               )}
-            </div> */}
+            </div>
           </div>
         </>
       ) : (
