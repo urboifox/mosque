@@ -2,9 +2,27 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import getPrivateFiles from "../getPrivateFiles";
 import PageSwiper from "@/components/PageSwiper";
 import selectTranslation from "@/hooks/selectTranslation";
-import { Fragment } from "react";
 import Image from "next/image";
 import { Link } from "@/navigation";
+
+const links = [
+  {
+    name: "articles",
+    link: "articles",
+  },
+  {
+    name: "audio",
+    link: "audios",
+  },
+  {
+    name: "fatwas",
+    link: "fatwas",
+  },
+  {
+    name: "videos",
+    link: "videos",
+  },
+];
 
 export default async function PrivateFile({
   params: { locale, privateFileId },
@@ -30,27 +48,89 @@ export default async function PrivateFile({
       />
       <section className="section">
         <div className="container">
-          <p className="my-20 max-w-lg text-center mx-auto">{description}</p>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-10">
-            {banners.map((e, i) => {
-              return (
-                <Fragment key={i}>
+          <p className="max-w-lg text-center mx-auto">{description}</p>
+          <div className="flex max-md:h-80 mb-20 gap-5 flex-col md:flex-row">
+            <Link
+              href={file[banners[0].link] || "/private-files"}
+              className="flex-1 max-md:flex max-md:w-full h-40 rounded-lg overflow-hidden relative"
+            >
+              <Image
+                src={file[banners[0].banner]}
+                className="object-cover"
+                alt={title}
+                fill
+                sizes="100%"
+              />
+            </Link>
+            <Link
+              href={file[banners[1].link] || "/private-files"}
+              className="flex-1 max-md:flex h-40 max-md:w-full rounded-lg overflow-hidden  relative"
+            >
+              <Image
+                src={file[banners[1].banner]}
+                className="object-cover"
+                alt={title}
+                fill
+                sizes="100%"
+              />
+            </Link>
+          </div>
+          <div className="flex flex-wrap flex-col-reverse md:flex-row items-center gap-5 justify-between">
+            <div className="flex-1 flex flex-col gap-3 mt-10 max-md:w-full md:max-w-xs">
+              {Array(5)
+                .fill(0)
+                .map((_, i) => {
+                  return (
+                    <Link
+                      key={i}
+                      href={`/private-files/${i + 1 + 2}`}
+                      className="w-full flex h-32 rounded-lg overflow-hidden relative"
+                    >
+                      <Image
+                        src={file[`bannerUrl${i + 1 + 2}`]}
+                        className="object-cover"
+                        alt={title}
+                        fill
+                        sizes="100%"
+                      />
+                    </Link>
+                  );
+                })}
+            </div>
+            <div className="flex flex-1 my-20 flex-col gap-4 mx-auto max-md:w-full max-w-xl">
+              {links.map((link, i) => {
+                return (
                   <Link
-                    href={`${file[e.link] || "/private-files"}`}
-                    target="_blank"
-                    className="shadow-md relative h-40 rounded-lg flex items-center justify-center overflow-x-hidden"
+                    href={`/private-files/${privateFileId}/${link.link}`}
+                    key={i}
+                    className="p-4 hover:text-white hover:bg-foreground transition-colors duration-200 flex items-center justify-center capitalize bg-light-100 rounded-xl flex-1"
                   >
-                    <Image
-                      src={file[e.banner]}
-                      fill
-                      alt={title}
-                      sizes="100%"
-                      className="object-cover -z-10"
-                    />
+                    {title} {link.name}
                   </Link>
-                </Fragment>
-              );
-            })}
+                );
+              })}
+            </div>
+            <div className="flex-1 flex flex-col gap-3 mt-10 max-md:w-full md:max-w-xs">
+              {Array(2)
+                .fill(0)
+                .map((_, i) => {
+                  return (
+                    <Link
+                      key={i}
+                      href={`/private-files/${i + 1 + 7}`}
+                      className="w-full flex md:aspect-square h-40 rounded-lg overflow-hidden relative"
+                    >
+                      <Image
+                        src={file[`bannerUrl${i + 1 + 7}`]}
+                        className="object-cover"
+                        alt={title}
+                        fill
+                        sizes="100%"
+                      />
+                    </Link>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </section>

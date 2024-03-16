@@ -1,7 +1,6 @@
 import PrimaryCard from "./PrimaryCard";
 import { Link } from "@/navigation";
 import MainButton from "./MainButton";
-import selectTranslation from "@/hooks/selectTranslation";
 
 export default async function ContentWithCategories({
   locale = "en",
@@ -13,6 +12,11 @@ export default async function ContentWithCategories({
   return (
     <section className="section">
       <div className="container">
+        {content.length === 0 && (
+          <div className="text-center">
+            <h2 className="font-cinzel font-bold text-3xl">No Content</h2>
+          </div>
+        )}
         {content.map((category) => {
           return (
             <div key={category.type.id} className="mb-40 flex flex-col gap-5">

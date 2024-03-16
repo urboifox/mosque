@@ -27,7 +27,6 @@ export default function DonateFoodForm() {
   });
 
   const [meals, setMeals] = useState([initialMeal]);
-
   return (
     <section className="section">
       <div className="container">
@@ -160,7 +159,6 @@ export default function DonateFoodForm() {
 function SubmitButton() {
   const t = useTranslations();
   const { pending } = useFormStatus();
-
   return (
     <MainButton
       disabled={pending}
