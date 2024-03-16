@@ -135,7 +135,7 @@ export default function EgazaForm({
                 className="bg-light-100 rounded-xl w-full px-4 py-4"
                 name="gender"
               >
-                <option value="other" selected disabled className="text-gray">
+                <option value="other" disabled className="text-gray">
                   {t("gender")}
                 </option>
                 <option value="male">{t("male")}</option>
