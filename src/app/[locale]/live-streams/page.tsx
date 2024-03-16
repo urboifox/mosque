@@ -19,7 +19,7 @@ export default async function LiveStreams({
       <PageSwiper heading="liveStreams" />
       <section className="section">
         <div className="container">
-          {liveStreams.length >= 1 ? (
+          {liveStreams?.length >= 1 ? (
             <>
               {liveStreams.map((stream, i) => {
                 return (
@@ -48,7 +48,7 @@ function LiveStreamCard({
   return (
     <div className="flex items-center gap-5 justify-between">
       <div className="flex flex-1 flex-col gap-5">
-        {stream.activeState && (
+        {stream?.activeState && (
           <span className="text-red-600 font-medium">{t("liveNow")}</span>
         )}
         <h2 className="font-cinzel font-bold text-3xl">{title}</h2>
