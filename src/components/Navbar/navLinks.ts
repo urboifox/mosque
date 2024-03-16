@@ -12,10 +12,6 @@ export const navLinks = [
     href: "/fatwa",
   },
   {
-    title: "about us",
-    href: "/about",
-  },
-  {
     title: "live streams",
     href: "/live-streams",
   },
