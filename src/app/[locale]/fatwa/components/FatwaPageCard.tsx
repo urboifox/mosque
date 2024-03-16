@@ -28,7 +28,8 @@ export default function FatwaPageCard({
         />
         <div
           dangerouslySetInnerHTML={{
-            __html: answer.length > 100 ? answer.slice(0, 150) + "..." : answer,
+            __html:
+              answer?.length > 100 ? answer?.slice(0, 150) + "..." : answer,
           }}
           className="text-dimmed text-sm mt-2"
         />
