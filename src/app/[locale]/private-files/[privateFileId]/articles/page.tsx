@@ -16,7 +16,7 @@ export default async function ArticlesPage({
 
   return (
     <div>
-      <PageSwiper media={settings.articlesBanner} heading="ramadan" />
+      <PageSwiper media={settings.articlesBanner} heading={"articles"} />
       <Articles
         data={articles.filter((e) => +e.privateFileId === +privateFileId)}
       />

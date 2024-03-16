@@ -105,7 +105,12 @@
   "news": "news",
   "private": "private files",
   "prayWithMe": "Pray With Me",
+  "titleEn": "Title in English",
+  "titleAr": "Title in Arabic",
+  "questionEn": "Question in English",
+  "questionAr": "Question in Arabic",
   "visuals": "visuals",
+  "ask-for-fatwa": "Ask For Fatwa",
   "books": "Books",
   "footer": {
     "description": "Conveying Islam based on evidences from the Quran and Sunnah, upon the understanding of our pious predecessors"

@@ -8,8 +8,8 @@ export const navLinks = [
     href: "/articles",
   },
   {
-    title: "fatwa bank",
-    href: "/fatwa",
+    title: "ask for fatwa",
+    href: "/ask-for-fatwa",
   },
   {
     title: "live streams",
@@ -23,6 +23,10 @@ export const navLinks = [
 
 export const subNavLinks = [
   {
+    title: "fatwa bank",
+    href: "/fatwa",
+  },
+  {
     title: "private files",
     href: "/private-files",
   },
@@ -33,6 +37,14 @@ export const subNavLinks = [
   {
     title: "pray with me",
     href: "/pray-with-me",
+  },
+  {
+    title: "women",
+    href: "/private-files/2",
+  },
+  {
+    title: "kids",
+    href: "/private-files/3",
   },
   {
     title: "egaza",

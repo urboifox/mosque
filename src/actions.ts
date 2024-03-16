@@ -37,3 +37,14 @@ export async function requestFood(formData: FormData) {
   console.log(response);
   return response;
 }
+
+export async function askFatwa(formData: FormData) {
+  const res = await fetch(`${BASE_URL}/Fatwa/fromanonymous`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const response = await res.json();
+  console.log(response);
+  return response;
+}

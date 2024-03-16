@@ -17,7 +17,7 @@ export default function FilterInputs({
 
   return (
     <div className="mx-auto max-w-screen mb-20 my-10 flex flex-col gap-8 items-center">
-      <div className="relative">
+      {/* <div className="relative">
         <input
           className="w-full md:min-w-[500px] px-8 bg-light-100 placeholder:text-dimmed text-foreground py-4 rounded-full"
           type="text"
@@ -29,7 +29,7 @@ export default function FilterInputs({
           size={24}
           className="absolute top-1/2 right-8 -translate-y-1/2"
         />
-      </div>
+      </div> */}
       <div className={`flex items-center gap-2 sm:gap-5`}>
         {filters.map((e, i) => {
           return (
