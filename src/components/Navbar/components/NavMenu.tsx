@@ -38,7 +38,7 @@ export default function NavMenu() {
                     onClick={() => setOpen(false)}
                     key={i}
                     href={link.href}
-                    className="p-2 px-4 transition-colors w-full flex items-center w-full justify-center text-center duration-300 text-background hover:text-primary flex w-max"
+                    className="p-1 text-sm md:text-base px-4 transition-colors items-center justify-center text-center duration-300 text-background hover:text-primary flex w-max capitalize"
                   >
                     <li>{link.title}</li>
                   </Link>

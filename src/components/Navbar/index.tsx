@@ -19,7 +19,7 @@ export default function Navbar() {
         {navLinks.map((link, i) => {
           return (
             <Link
-              className="relative uppercase font-semibold text-sm hover:text-primary transition-colors !font-cinzel duration-300"
+              className="relative uppercase font-semibold text-sm hover:text-primary transition-colors duration-300"
               href={link.href}
               key={i}
             >

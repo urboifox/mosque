@@ -50,7 +50,7 @@ export default function PrimaryCard({
           </p>
           <div className="flex justify-between">
             <div>
-              <h2 className="font-cinzel font-bold text-lg md:text-xl capitalize text-foreground">
+              <h2 className="font-medium text-lg md:text-xl capitalize text-foreground">
                 {title}
               </h2>
               <p className="text-dimmed font-normal">

@@ -39,6 +39,10 @@ export const subNavLinks = [
     href: "/pray-with-me",
   },
   {
+    title: "cards",
+    href: "/cards",
+  },
+  {
     title: "women",
     href: "/private-files/2",
   },

@@ -47,7 +47,7 @@ function Displayer({ times }: { times: PrayerTimesResponse }) {
   return (
     <div className="px-3 md:px-20 mb-20">
       <div className="text-xl flex flex-col items-center gap-5 text-center container rounded-[3rem] text-background py-10 bg-foreground">
-        <p className="font-bold text-primary font-cinzel">
+        <p className="font-medium text-primary ">
           {t("today")}: {date.readable}
         </p>
         <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
