@@ -1,6 +1,7 @@
 import PrimaryCard from "./PrimaryCard";
 import { Link } from "@/navigation";
 import MainButton from "./MainButton";
+import NoContent from "./NoContent";
 
 export default async function ContentWithCategories({
   locale = "en",
@@ -14,7 +15,7 @@ export default async function ContentWithCategories({
       <div className="container">
         {content.length === 0 && (
           <div className="text-center">
-            <h2 className="font-cinzel font-bold text-3xl">No Content</h2>
+            <NoContent />
           </div>
         )}
         {content.map((category) => {

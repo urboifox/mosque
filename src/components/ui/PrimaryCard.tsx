@@ -6,7 +6,7 @@ import { cn, formatDate } from "@/utils";
 import selectTranslation from "@/hooks/selectTranslation";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { useRef, useState } from "react";
-import { FaEye } from "react-icons/fa6";
+import { FaDownload, FaEye } from "react-icons/fa6";
 
 export default function PrimaryCard({
   data,
@@ -28,7 +28,7 @@ export default function PrimaryCard({
   );
 
   return (
-    <article className="max-w-[600px] flex flex-col h-full w-full gap-2 justify-between">
+    <article className=" flex flex-col h-full w-full gap-2 justify-between">
       <div className={cn("flex flex-col gap-4", className)}>
         <div className="overflow-hidden min-w-60 aspect-[4/3] rounded-[40px] group relative">
           <Image
@@ -62,9 +62,14 @@ export default function PrimaryCard({
               </p>
             </div>
             {!mediaType && data?.path && (
-              <Link href={data.path} target="_blank">
-                <FaEye size={15} />
-              </Link>
+              <div className="flex gap-2">
+                <Link href={data.path} target="_blank">
+                  <FaEye size={15} />
+                </Link>
+                <a href={data.path} target="_blank">
+                  <FaDownload size={15} />
+                </a>
+              </div>
             )}
             {mediaType && (
               <>

@@ -7,6 +7,10 @@ import { Link } from "@/navigation";
 
 const links = [
   {
+    name: "cards",
+    link: "cards",
+  },
+  {
     name: "articles",
     link: "articles",
   },

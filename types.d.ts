@@ -254,3 +254,11 @@ type PrayerTimesResponse = {
     };
   };
 };
+type CardResponse = {
+  title_En: string;
+  title_Ar: string;
+  path: string;
+  privateFileId: number;
+  privateFile_En: string;
+  privateFile_Ar: string;
+};
