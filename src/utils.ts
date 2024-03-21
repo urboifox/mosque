@@ -145,12 +145,7 @@ export async function getPrayerTimes(
   city: string = "London"
 ) {
   const res = await fetch(
-    `http://api.aladhan.com/v1/timingsByCity?country=${country}&city=${city}`,
-    {
-      next: {
-        revalidate: 60,
-      },
-    }
+    `http://api.aladhan.com/v1/timingsByCity?country=${country}&city=${city}`
   );
 
   if (!res.ok) {
