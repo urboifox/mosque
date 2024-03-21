@@ -29,14 +29,6 @@ export default function DownloadOurApp() {
             <div className="flex gap-5 items-center">
               <Link href={""} target="_blank">
                 <Image
-                  src={"/images/huawei-store.svg"}
-                  alt="Huawei store"
-                  width={150}
-                  height={45}
-                />
-              </Link>
-              <Link href={""} target="_blank">
-                <Image
                   src={"/images/apple-store.svg"}
                   alt="Apple store"
                   width={150}

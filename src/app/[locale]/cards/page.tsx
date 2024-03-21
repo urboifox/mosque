@@ -1,10 +1,18 @@
+import PageSwiper from "@/components/PageSwiper";
+import { getCards, getSettings } from "@/utils";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default function CardsPage({
+export default async function CardsPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
-  return <div>page</div>;
+  const cards = await getCards();
+  console.log(cards);
+  return (
+    <div>
+      <PageSwiper heading="cards" />
+    </div>
+  );
 }

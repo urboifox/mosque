@@ -8,6 +8,10 @@ export async function getSettings() {
   const res = await fetch(`${BASE_URL}/AppSettings`);
   return res.json();
 }
+export async function getCards(cardId?: string) {
+  const res = await fetch(`${BASE_URL}/Card${cardId ? `/${cardId}` : ""}`);
+  return res.json();
+}
 
 export async function getArticles(articleId?: string) {
   const res = await fetch(

@@ -15,7 +15,9 @@ export default async function NewsSection() {
             {
               <PrimaryCard
                 className="max-sm:flex-col"
-                href={`news/${res[0].newsType_En?.toLowerCase()}/${res[0].id}`}
+                href={`news/${res[0]?.newsType_En?.toLowerCase()}/${
+                  res[0]?.id
+                }`}
                 data={res[0]}
                 key={`news`}
               />

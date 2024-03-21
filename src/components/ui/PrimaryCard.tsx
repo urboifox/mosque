@@ -32,7 +32,7 @@ export default function PrimaryCard({
       <div className={cn("flex flex-col gap-4", className)}>
         <div className="overflow-hidden min-w-60 aspect-[4/3] rounded-[40px] group relative">
           <Image
-            src={data.bannerUrl || data.path || "/images/card-image.jpg"}
+            src={data?.bannerUrl || data?.path || "/images/card-image.jpg"}
             alt={title}
             className="object-cover group-hover:scale-105 transition-all duration-700 ease-out"
             fill
@@ -40,11 +40,13 @@ export default function PrimaryCard({
         </div>
         <div className="flex flex-col gap-2">
           <p className="flex [&>span]:pr-6 cursor-pointer text-gray">
-            <span>{data?.createdDate ? formatDate(data.createdDate) : ""}</span>
+            <span>
+              {data?.createdDate ? formatDate(data?.createdDate) : ""}
+            </span>
             {data?.author ||
               (series && (
                 <span className="relative before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2  before:rounded-full before:w-[5px] before:h-[5px] before:bg-gray">
-                  {data.author || series}
+                  {data?.author || series}
                 </span>
               ))}
           </p>
