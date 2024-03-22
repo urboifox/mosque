@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
       <div className="container">
         <div className="py-5 bg-nature-400 text-sm text-white flex items-center justify-center">
-          Terms of Service | Privacy Policy | &copy; 2023 City Mosque Preston
+          &copy; 2023 City Mosque Preston
         </div>
       </div>
     </div>

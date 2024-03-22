@@ -8,8 +8,12 @@ export async function getSettings() {
   const res = await fetch(`${BASE_URL}/AppSettings`);
   return res.json();
 }
-export async function getCards(cardId?: string) {
-  const res = await fetch(`${BASE_URL}/Card${cardId ? `/${cardId}` : ""}`);
+export async function getCards(cardId?: string, PrivateFileId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/Card${cardId ? `/${cardId}` : ""}${
+      PrivateFileId ? `?PrivateFileId=${PrivateFileId}` : ""
+    }`
+  );
   return res.json();
 }
 
@@ -163,4 +167,24 @@ export function formatDate(inputDate: string) {
   const date = new Date(inputDate);
   const options: any = { year: "numeric", month: "short", day: "2-digit" };
   return date.toLocaleDateString("en-US", options);
+}
+
+export function handleDownload(url: string, fileName: string, ext: string) {
+  fetch(url)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", `${fileName}.${ext}`);
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    })
+    .catch((error) => {
+      console.error("Error fetching the file:", error);
+    });
 }

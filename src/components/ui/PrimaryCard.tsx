@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
-import { cn, formatDate } from "@/utils";
+import { cn, formatDate, handleDownload } from "@/utils";
 import selectTranslation from "@/hooks/selectTranslation";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { useRef, useState } from "react";
@@ -66,9 +66,18 @@ export default function PrimaryCard({
                 <Link href={data.path} target="_blank">
                   <FaEye size={15} />
                 </Link>
-                <a href={data.path} target="_blank">
+                <button
+                  className="h-max"
+                  onClick={() =>
+                    handleDownload(
+                      data.path,
+                      data.title || title,
+                      data.path.slice(-3)
+                    )
+                  }
+                >
                   <FaDownload size={15} />
-                </a>
+                </button>
               </div>
             )}
             {mediaType && (
