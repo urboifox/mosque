@@ -4,6 +4,7 @@ import PageSwiper from "@/components/PageSwiper";
 import selectTranslation from "@/hooks/selectTranslation";
 import Image from "next/image";
 import { Link } from "@/navigation";
+import { getLinksLibrary } from "@/utils";
 
 const links = [
   {
@@ -35,6 +36,8 @@ export default async function PrivateFile({
 }) {
   unstable_setRequestLocale(locale);
   const file: any = await getPrivateFiles(privateFileId);
+  const linksLibraries = await getLinksLibrary(privateFileId);
+
   const { title, description } = selectTranslation(locale, file);
 
   const arr = Object.keys(file).filter((e) => e.startsWith("bannerUrl"));
@@ -42,6 +45,13 @@ export default async function PrivateFile({
     const number = e.split("l")[1];
     return { banner: `bannerUrl${number}`, link: `bannerGo_${number}` };
   });
+
+  const linksWithLibraries = links.concat(
+    linksLibraries.map((e: any) => {
+      const { title } = selectTranslation(locale, e);
+      return { name: title, link: `links-library?libraryId=${e.id}` };
+    })
+  );
 
   return (
     <div>
@@ -102,14 +112,14 @@ export default async function PrivateFile({
                 })}
             </div>
             <div className="flex flex-1 my-20 flex-col gap-4 mx-auto max-md:w-full max-w-xl">
-              {links.map((link, i) => {
+              {linksWithLibraries.map((link, i) => {
                 return (
                   <Link
                     href={`/private-files/${privateFileId}/${link.link}`}
                     key={i}
                     className="p-4 hover:text-white hover:bg-foreground transition-colors duration-200 flex items-center justify-center capitalize bg-light-100 rounded-xl flex-1"
                   >
-                    {title} {link.name}
+                    {link.name}
                   </Link>
                 );
               })}

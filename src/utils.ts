@@ -17,6 +17,19 @@ export async function getCards(cardId?: string, PrivateFileId?: string) {
   return res.json();
 }
 
+export async function getLinksLibrary(
+  privateFileId: string,
+  libraryId: string
+) {
+  const res = await fetch(
+    `${BASE_URL}/LinksLibrary${
+      libraryId ? `/${libraryId}` : ""
+    }?PrivateFileId=${privateFileId}`
+  );
+
+  return res.json();
+}
+
 export async function getArticles(articleId?: string) {
   const res = await fetch(
     `${BASE_URL}/Article${articleId ? `/${articleId}` : ""}`

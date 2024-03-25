@@ -26,7 +26,7 @@ export default async function ContentWithCategories({
                   {category.name}
                 </h2>
                 <Link
-                  href={`/${category.endpoint.toLowerCase()}/${category.type.name_En.toLowerCase()}`}
+                  href={`/${category?.endpoint?.toLowerCase()}/${category.type.name_En.toLowerCase()}`}
                 >
                   <MainButton className="p-3 px-6 border-foreground rounded-lg !text-sm bg-foreground hover:bg-transparent hover:border-foreground hover:text-foreground">
                     {locale === "en" ? "View All" : "اظهار الكل"}

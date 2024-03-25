@@ -12,8 +12,14 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "*",
+        port: "",
+        pathname: "/**",
+      },
     ],
-    domains: ["mohammed50500-001-site1.jtempurl.com"],
+    domains: ["mohammed50500-001-site1.jtempurl.com", "*"],
   },
 };
 

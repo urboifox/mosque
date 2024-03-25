@@ -5,7 +5,6 @@ import { Link } from "@/navigation";
 import { getLiveStream } from "@/utils";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { title } from "process";
 
 export default async function LiveStreams({
   params: { locale },
@@ -20,13 +19,13 @@ export default async function LiveStreams({
       <section className="section">
         <div className="container">
           {liveStreams?.length >= 1 ? (
-            <>
+            <div className="flex flex-col gap-10">
               {liveStreams.map((stream, i) => {
                 return (
                   <LiveStreamCard locale={locale} key={i} stream={stream} />
                 );
               })}
-            </>
+            </div>
           ) : (
             <NotStreaming />
           )}
@@ -98,7 +97,7 @@ function LiveStreamCard({
 function NotStreaming() {
   const t = useTranslations();
   return (
-    <h1 className="text-xl max-w-xl mx-auto font-cinzel font-bold text-center py-20">
+    <h1 className="text-xl max-w-xl mx-auto font-bold text-center py-20">
       {t("notLiveStreaming")}
     </h1>
   );
