@@ -19,7 +19,7 @@ export default function NavCTA() {
         {t("lang")}
       </Link>
       <Link href={`/donate`}>
-        <MainButton className="capitalize px-6 py-[.4rem] max-sm:text-xs max-sm:font-normal max-sm:px-2">
+        <MainButton className="capitalize px-6 py-[.4rem] max-md:text-xs max-md:font-normal max-md:px-2">
           {t("donateNow")}
         </MainButton>
       </Link>

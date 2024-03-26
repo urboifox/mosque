@@ -3,8 +3,20 @@ import Image from "next/image";
 import { navLinks } from "./navLinks";
 import NavCTA from "./components/NavCTA";
 import NavMenu from "./components/NavMenu";
+import { getLinksLibrary } from "@/utils";
+import selectTranslation from "@/hooks/selectTranslation";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const navLibraries = await getLinksLibrary("1");
+  const newNavLinks = navLinks.concat(
+    navLibraries.map((e: any) => {
+      const { title } = selectTranslation("en", e);
+      return {
+        title,
+        href: `/private-files/${e.privateFileId}/links-library?libraryId=${e.id}`,
+      };
+    })
+  );
   return (
     <header className="relative container flex items-center justify-between h-[80px] gap-5">
       <Link href="/">
@@ -15,11 +27,11 @@ export default function Navbar() {
           alt="Masjid logo"
         />
       </Link>
-      <nav className="hidden lg:flex items-center gap-4">
-        {navLinks.map((link, i) => {
+      <nav className="hidden lg:flex items-center gap-3">
+        {newNavLinks.map((link, i) => {
           return (
             <Link
-              className="relative uppercase font-semibold text-sm hover:text-primary transition-colors duration-300"
+              className="relative w-max uppercase font-semibold text-sm hover:text-primary transition-colors duration-300"
               href={link.href}
               key={i}
             >

@@ -30,7 +30,7 @@ export default async function LinksLibrary({
                   <div className="flex gap-3 flex-wrap">
                     {e.libraryRecords.map((r: any, j: number) => {
                       return (
-                        <div key={j}>
+                        <div key={j} className="flex-1 max-w-[500px]">
                           <PrimaryCard
                             data={r}
                             locale={locale}
