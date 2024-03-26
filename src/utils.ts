@@ -157,14 +157,19 @@ export async function getContentWithCategories(
   types: any[],
   endpoint: string,
   param: string,
-  locale: string
+  locale: string,
+  privateFileId?: number
 ) {
   let content: any[] = [];
 
   // Map each type to a promise of fetching its data
   const promises = types.map(async (type) => {
     // Fetch each type's data
-    const res = await fetch(`${BASE_URL}/${endpoint}?${param}=${type.id}`);
+    const res = await fetch(
+      `${BASE_URL}/${endpoint}?${param}=${type.id}${
+        privateFileId ? `&PrivateFileId=${privateFileId}` : ""
+      }`
+    );
     const typeData = await res.json();
     const { name } = selectTranslation(locale, type);
     return { type, typeData, endpoint, name };
@@ -172,7 +177,6 @@ export async function getContentWithCategories(
 
   // Wait for all promises to resolve
   content = await Promise.all(promises);
-
   return content;
 }
 

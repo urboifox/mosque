@@ -19,16 +19,14 @@ export default async function AudiosPage({
     mediaTypes,
     "Video",
     "MediaTypeId",
-    locale
+    locale,
+    privateFileId
   );
 
   return (
     <div>
       <PageSwiper media={settings.audiosBanner} heading="videos" />
-      <ContentWithCategories
-        locale={locale}
-        content={content.filter((e: any) => e.privateFileId === +privateFileId)}
-      />
+      <ContentWithCategories locale={locale} content={content} />
     </div>
   );
 }
