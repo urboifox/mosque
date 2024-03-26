@@ -6,7 +6,7 @@ import NavMenu from "./components/NavMenu";
 
 export default function Navbar() {
   return (
-    <header className="relative container flex items-center justify-between h-[80px]">
+    <header className="relative container flex items-center justify-between h-[80px] gap-5">
       <Link href="/">
         <Image
           src={"/images/logo.svg"}
@@ -29,7 +29,7 @@ export default function Navbar() {
         })}
       </nav>
       <div className="flex items-center gap-2">
-        <div className="flex items-center gap-3 md:flex">
+        <div className="flex items-center gap-3 max-sm:gap-1 md:flex">
           <NavCTA />
         </div>
         <NavMenu />

@@ -10,7 +10,7 @@ export default function PrivateFilesGrid({
 }) {
   return (
     <section className="section">
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-10">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] max-sm:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10">
         {privateFiles.length > 0 ? (
           privateFiles.map((file, i) => {
             return <PrivateFileCard key={i} data={file} locale={locale} />;

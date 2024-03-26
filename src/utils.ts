@@ -19,7 +19,7 @@ export async function getCards(cardId?: string, PrivateFileId?: string) {
 
 export async function getLinksLibrary(
   privateFileId: string,
-  libraryId: string
+  libraryId?: string
 ) {
   const res = await fetch(
     `${BASE_URL}/LinksLibrary${

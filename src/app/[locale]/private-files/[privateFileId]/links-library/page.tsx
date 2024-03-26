@@ -1,7 +1,5 @@
 import PageSwiper from "@/components/PageSwiper";
-import ContentWithCategories from "@/components/ui/ContentWithCategories";
 import PrimaryCard from "@/components/ui/PrimaryCard";
-import { BASE_URL } from "@/constants";
 import selectTranslation from "@/hooks/selectTranslation";
 import { getLinksLibrary } from "@/utils";
 import { unstable_setRequestLocale } from "next-intl/server";
