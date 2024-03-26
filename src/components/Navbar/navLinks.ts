@@ -43,6 +43,10 @@ export const subNavLinks = [
     href: "/cards",
   },
   {
+    title: "videos",
+    href: "/video",
+  },
+  {
     title: "women",
     href: "/private-files/2",
   },

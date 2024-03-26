@@ -159,14 +159,19 @@ export async function getContentWithCategories(
   param: string,
   locale: string
 ) {
-  let content: any = [];
-  types.forEach(async (type) => {
-    // loop over the types and fetch each type's data
+  let content: any[] = [];
+
+  // Map each type to a promise of fetching its data
+  const promises = types.map(async (type) => {
+    // Fetch each type's data
     const res = await fetch(`${BASE_URL}/${endpoint}?${param}=${type.id}`);
     const typeData = await res.json();
     const { name } = selectTranslation(locale, type);
-    content.push({ type, typeData, endpoint, name });
+    return { type, typeData, endpoint, name };
   });
+
+  // Wait for all promises to resolve
+  content = await Promise.all(promises);
 
   return content;
 }

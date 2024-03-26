@@ -41,6 +41,7 @@ export default function OneItemContent({
         }),
       });
     })();
+    return () => {};
   }, [data.id, addViewLink]);
 
   return (
@@ -48,19 +49,17 @@ export default function OneItemContent({
       <PageSwiper className={"text-3xl"} path={path} heading={title} />
       <section className="section">
         <div className="mx-auto px-3 flex justify-center [&_>_div]:w-full flex-col lg:w-1/2 items-center">
-          <div className="relative h-96">
-            <Image
-              src={
-                "/images/card-image.jpg" ||
-                data.bannerUrl ||
-                "/images/card-image.jpg"
-              }
-              alt={title}
-              fill
-              sizes="100%"
-              className="object-cover"
-            />
-          </div>
+          {data.bannerUrl && (
+            <div className="relative h-96">
+              <Image
+                src={data.bannerUrl}
+                alt={title}
+                fill
+                sizes="100%"
+                className="object-cover"
+              />
+            </div>
+          )}
           <div className="py-3 flex text-sm items-center gap-5 border-b text-dimmed uppercase border-light-200">
             {mediaType ? (
               <>
