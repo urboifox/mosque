@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { navLinks, subNavLinks } from "../navLinks";
+import { subNavLinks } from "../navLinks";
 import { Link } from "@/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import NavCTA from "./NavCTA";
 import { IoClose } from "react-icons/io5";
 
-export default function NavMenu() {
+export default function NavMenu({ navLinks }: { navLinks: any[] }) {
   const [open, setOpen] = useState(false);
   const allLinks = navLinks.concat(subNavLinks);
   return (

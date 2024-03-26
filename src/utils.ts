@@ -30,9 +30,11 @@ export async function getLinksLibrary(
   return res.json();
 }
 
-export async function getArticles(articleId?: string) {
+export async function getArticles(articleId?: string, privateFileId?: string) {
   const res = await fetch(
-    `${BASE_URL}/Article${articleId ? `/${articleId}` : ""}`
+    `${BASE_URL}/Article${articleId ? `/${articleId}` : ""}${
+      privateFileId ? `?PrivateFileId=${privateFileId}` : ""
+    }`
   );
   return res.json();
 }
@@ -40,11 +42,15 @@ export async function getBook(bookId?: string) {
   const res = await fetch(`${BASE_URL}/Book${bookId ? `/${bookId}` : ""}`);
   return res.json();
 }
-export async function getAudio(audioId?: string, mediaTypeId?: string) {
+export async function getAudio(
+  audioId?: string,
+  mediaTypeId?: string,
+  PrivateFileId?: string
+) {
   const res = await fetch(
-    `${BASE_URL}/Audio${audioId ? `/${audioId}` : ""}${
-      mediaTypeId ? `?MediaTypeId=${mediaTypeId}` : ""
-    }`
+    `${BASE_URL}/Audio${audioId ? `/${audioId}` : ""}?params=true${
+      mediaTypeId ? `&MediaTypeId=${mediaTypeId}` : ""
+    }${PrivateFileId ? `&PrivateFileId=${PrivateFileId}` : ""}`
   );
   return res.json();
 }
@@ -61,8 +67,12 @@ export async function getAudio(audioId?: string, mediaTypeId?: string) {
 //   return res.json();
 // }
 
-export async function getFatwa(fatwaId?: string) {
-  const res = await fetch(`${BASE_URL}/Fatwa${fatwaId ? `/${fatwaId}` : ""}`);
+export async function getFatwa(fatwaId?: string, privateFileId?: string) {
+  const res = await fetch(
+    `${BASE_URL}/Fatwa${fatwaId ? `/${fatwaId}` : ""}${
+      privateFileId ? `?PrivateFileId=${privateFileId}` : ""
+    }`
+  );
   return res.json();
 }
 
@@ -79,11 +89,15 @@ export async function getEgazaSheikh() {
   return res.json();
 }
 
-export async function getVideo(videoId?: string, mediaTypeId?: string) {
+export async function getVideo(
+  videoId?: string,
+  mediaTypeId?: string,
+  PrivateFileId?: string
+) {
   const res = await fetch(
-    `${BASE_URL}/Video${videoId ? `/${videoId}` : ""}${
-      mediaTypeId ? `?MediaTypeId=${mediaTypeId}` : ""
-    }`
+    `${BASE_URL}/Video${videoId ? `/${videoId}` : ""}?params=true${
+      mediaTypeId ? `&MediaTypeId=${mediaTypeId}` : ""
+    }${PrivateFileId ? `&PrivateFileId=${PrivateFileId}` : ""}`
   );
   return res.json();
 }

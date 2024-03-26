@@ -44,7 +44,7 @@ export default async function Navbar() {
         <div className="flex items-center gap-3 max-sm:gap-1 md:flex">
           <NavCTA />
         </div>
-        <NavMenu />
+        <NavMenu navLinks={newNavLinks} />
       </div>
     </header>
   );

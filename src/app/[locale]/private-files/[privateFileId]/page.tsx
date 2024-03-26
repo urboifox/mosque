@@ -4,7 +4,14 @@ import PageSwiper from "@/components/PageSwiper";
 import selectTranslation from "@/hooks/selectTranslation";
 import Image from "next/image";
 import { Link } from "@/navigation";
-import { getLinksLibrary } from "@/utils";
+import {
+  getArticles,
+  getAudio,
+  getCards,
+  getFatwa,
+  getLinksLibrary,
+  getVideo,
+} from "@/utils";
 
 const links = [
   {
@@ -38,6 +45,38 @@ export default async function PrivateFile({
   const file: any = await getPrivateFiles(privateFileId);
   const linksLibraries = await getLinksLibrary(privateFileId);
 
+  const articlesRes = getArticles(undefined, privateFileId);
+  const cardsRes = getCards(undefined, privateFileId);
+  const audioRes = getAudio(undefined, undefined, privateFileId);
+  const videosRes = getVideo(undefined, undefined, privateFileId);
+  const fatwaRes = getFatwa(undefined, privateFileId);
+
+  const [articles, cards, audios, videos, fatwas] = await Promise.all([
+    articlesRes,
+    cardsRes,
+    audioRes,
+    videosRes,
+    fatwaRes,
+  ]);
+
+  const filteredLinks = links.filter((e) => {
+    if (e.name === "cards") {
+      return cards.length > 0;
+    }
+    if (e.name === "articles") {
+      return articles.length > 0;
+    }
+    if (e.name === "audio") {
+      return audios.length > 0;
+    }
+    if (e.name === "videos") {
+      return videos.length > 0;
+    }
+    if (e.name === "fatwas") {
+      return fatwas.length > 0;
+    }
+  });
+
   const { title, description } = selectTranslation(locale, file);
 
   const arr = Object.keys(file).filter((e) => e.startsWith("bannerUrl"));
@@ -46,7 +85,7 @@ export default async function PrivateFile({
     return { banner: `bannerUrl${number}`, link: `bannerGo_${number}` };
   });
 
-  const linksWithLibraries = links.concat(
+  const linksWithLibraries = filteredLinks.concat(
     linksLibraries.map((e: any) => {
       const { title } = selectTranslation(locale, e);
       return { name: title, link: `links-library?libraryId=${e.id}` };
