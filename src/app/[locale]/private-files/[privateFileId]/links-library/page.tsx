@@ -35,6 +35,7 @@ export default async function LinksLibrary({
                             data={r}
                             locale={locale}
                             href={r.linkToGo}
+                            target={"_blank"}
                           />
                         </div>
                       );

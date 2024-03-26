@@ -13,11 +13,13 @@ export default function PrimaryCard({
   locale = "en",
   href = "#",
   className,
+  target,
 }: {
   data: any;
   locale?: string;
   href?: string;
   className?: string;
+  target?: string;
 }) {
   const t = useTranslations();
   const [isPlaying, playing] = useState(false);
@@ -114,6 +116,7 @@ export default function PrimaryCard({
           </div>
           <Link
             href={href}
+            target={target || "_self"}
             className="pl-12 hover:before:bg-secondary before:transition-colors before:duration-200 flex text-primary relative before:content-[''] before:absolute before:bg-primary before:h-[2px] before:rounded-full before:w-10 before:top-1/2 before:-translate-y-1/2 before:left-0 transition-colors duration-200 text-lg hover:text-secondary font-medium"
           >
             {t("more")}
